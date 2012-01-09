@@ -19,8 +19,54 @@
 		<Item Name="Icon" Type="Folder" URL="../Icon">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="Support" Type="Folder" URL="../Support">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
+		<Item Name="Support" Type="Folder">
+			<Item Name="SubPanel" Type="Folder">
+				<Item Name="BinaryPlot" Type="Folder">
+					<Item Name="BinaryPlot.vi" Type="VI" URL="../Support/SubPanel/BinaryPlot/BinaryPlot.vi"/>
+				</Item>
+				<Item Name="FlightStatus" Type="Folder">
+					<Item Name="AH.jpg" Type="Document" URL="../Support/SubPanel/FlightStatus/AH.jpg"/>
+					<Item Name="Dial.png" Type="Document" URL="../Support/SubPanel/FlightStatus/Dial.png"/>
+					<Item Name="FixedHorizonTrans.png" Type="Document" URL="../Support/SubPanel/FlightStatus/FixedHorizonTrans.png"/>
+					<Item Name="FlightStatus.vi" Type="VI" URL="../Support/SubPanel/FlightStatus/FlightStatus.vi"/>
+					<Item Name="TxDial.png" Type="Document" URL="../Support/SubPanel/FlightStatus/TxDial.png"/>
+				</Item>
+				<Item Name="Initialize" Type="Folder">
+					<Item Name="AccelModel.stl" Type="Document" URL="../Support/SubPanel/Initialize/AccelModel.stl"/>
+					<Item Name="Initialize.vi" Type="VI" URL="../Support/SubPanel/Initialize/Initialize.vi"/>
+					<Item Name="TxCalDial.png" Type="Document" URL="../Support/SubPanel/Initialize/TxCalDial.png"/>
+				</Item>
+				<Item Name="Map" Type="Folder">
+					<Item Name="AeroQuad.cfg" Type="Document" URL="../Support/SubPanel/Map/AeroQuad.cfg"/>
+					<Item Name="Map.vi" Type="VI" URL="../Support/SubPanel/Map/Map.vi"/>
+				</Item>
+				<Item Name="Model" Type="Folder">
+					<Item Name="Hex +.stl" Type="Document" URL="../Support/SubPanel/Model/Hex +.stl"/>
+					<Item Name="Hex X.stl" Type="Document" URL="../Support/SubPanel/Model/Hex X.stl"/>
+					<Item Name="Hex Y6.stl" Type="Document" URL="../Support/SubPanel/Model/Hex Y6.stl"/>
+					<Item Name="Model - ReadMe.txt" Type="Document" URL="../Support/SubPanel/Model/Model - ReadMe.txt"/>
+					<Item Name="Model.vi" Type="VI" URL="../Support/SubPanel/Model/Model.vi"/>
+					<Item Name="Octo X+.stl" Type="Document" URL="../Support/SubPanel/Model/Octo X+.stl"/>
+					<Item Name="Octo X.stl" Type="Document" URL="../Support/SubPanel/Model/Octo X.stl"/>
+					<Item Name="Octo X8.stl" Type="Document" URL="../Support/SubPanel/Model/Octo X8.stl"/>
+					<Item Name="Quad +.stl" Type="Document" URL="../Support/SubPanel/Model/Quad +.stl"/>
+					<Item Name="Quad X.stl" Type="Document" URL="../Support/SubPanel/Model/Quad X.stl"/>
+					<Item Name="Quad Y4.stl" Type="Document" URL="../Support/SubPanel/Model/Quad Y4.stl"/>
+					<Item Name="Tri.stl" Type="Document" URL="../Support/SubPanel/Model/Tri.stl"/>
+				</Item>
+				<Item Name="MotorCommand" Type="Folder">
+					<Item Name="MotorCommand.vi" Type="VI" URL="../Support/SubPanel/MotorCommand/MotorCommand.vi"/>
+				</Item>
+				<Item Name="Plot" Type="Folder">
+					<Item Name="Plot.vi" Type="VI" URL="../Support/SubPanel/Plot/Plot.vi"/>
+				</Item>
+				<Item Name="SerialMonitor" Type="Folder">
+					<Item Name="SerialMonitor.vi" Type="VI" URL="../Support/SubPanel/SerialMonitor/SerialMonitor.vi"/>
+				</Item>
+				<Item Name="Template" Type="Folder">
+					<Item Name="Template.vi" Type="VI" URL="../Support/SubPanel/Template/Template.vi"/>
+				</Item>
+			</Item>
 		</Item>
 		<Item Name="Utilities" Type="Folder" URL="../Utilities">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
