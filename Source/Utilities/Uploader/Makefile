@@ -54,6 +54,7 @@ ARDUINO_LIB = $(INSTALL_DIR)/libraries
 AVR_TOOLS_PATH = $(INSTALL_DIR)/hardware/tools/avr/bin
 AVR_UTILS_PATH = $(INSTALL_DIR)/hardware/tools/avr/utils/bin
 AVRDUDE_PATH = $(INSTALL_DIR)/hardware/tools/avr/bin
+AQ_LIB = $(AQ)/Libraries
 
 #Note that if your program has dependencies other than those
 #already listed below, you will need to add them accordingly.
@@ -64,6 +65,7 @@ $(ARDUINO)/wiring.c \
 $(ARDUINO)/wiring_digital.c \
 $(ARDUINO)/WInterrupts.c \
 $(ARDUINO)/wiring_shift.c \
+$(ARDUINO_LIB)/Wire/utility/twi.c
 
 CXX_MODULES = \
 $(ARDUINO)/Tone.cpp \
@@ -79,10 +81,10 @@ $(ARDUINO)/USBCore.cpp \
 $(ARDUINO)/WMath.cpp \
 $(ARDUINO)/WString.cpp \
 $(ARDUINO)/main.cpp \
-$(ARDUINO_LIB)/EEPROM/EEPROM.cpp
-
-CXX_MODULES += $(shell find $(ARDUINO_LIB)  -maxdepth 2 -mindepth 2 -type f -name *.cpp -exec /bin/echo -n " {}" \;)
-CXX_MODULES += $(shell find $(AQ_LIB)  -maxdepth 2 -mindepth 2 -type f -name *.cpp -exec /bin/echo -n " {}" \;)
+$(ARDUINO_LIB)/EEPROM/EEPROM.cpp \
+$(ARDUINO_LIB)/Wire/Wire.cpp \
+$(AQ_LIB)/AQ_Math/AQMath.cpp \
+$(AQ_LIB)/AQ_I2C/Device_I2C.cpp
 
 CXX_APP = main.cpp
 MODULES = $(C_MODULES) $(CXX_MODULES)
@@ -107,10 +109,9 @@ CXXDEFS = -DF_CPU=$(F_CPU)L -DARDUINO=$(VERSION)
 
 # Place -I options here
 CINCS = -I$(ARDUINO)  -I$(VARIANTS) -I$(ARDUINO_LIB)
+CINCS += -IC:\Development\arduino-1.0\libraries\EEPROM -IC:\Development\arduino-1.0\libraries\Wire -IC:\Development\arduino-1.0\libraries\Wire\utility
+CINCS += $(AQ_INCS)
 CXXINCS = -I$(ARDUINO) -I$(VARIANTS) -I$(ARDUINO_LIB)
-
-CINCS += $(shell find $(ARDUINO_LIB) -mindepth 1 -maxdepth 2 -type d ! -name examples -exec /bin/echo -n " -I{} " \;)
-CXXINCS += $(shell find $(ABDUINO_LIB) -mindepth 1 -maxdepth 2 -type d ! -name examples -exec /bin/echo -n " -I{} " \;)
 
 # Compiler flag to set the C Standard level.
 # c89   - "ANSI" C
@@ -157,7 +158,6 @@ MV = $(AVR_UTILS_PATH)/mv -f
 # Define all object files.
 OBJ = $(SRC:.c=.o) $(CXXSRC:.cpp=.o) $(ASRC:.S=.o)
 OBJ_MODULES = $(C_MODULES:.c=.o) $(CXX_MODULES:.cpp=.o)
-#OBJ_MODULES = $(C_MODULES.c=.o) $(CXX_MODULES.cpp=.o)
 
 # Define all listing files.
 LST = $(ASRC:.S=.lst) $(CXXSRC:.cpp=.lst) $(SRC:.c=.lst)
@@ -181,7 +181,7 @@ build: elf hex
 applet/main.o: 
 	test -d applet || mkdir applet
 	echo '#include "Arduino.h"' > applet/main.cpp
-	cat $(TARGET).ino >> applet/main.cpp
+	cat AeroQuad.ino >> applet/main.cpp
 	$(CXX) -c $(ALL_CXXFLAGS) applet/main.cpp -o applet/main.o
 
 elf: applet/main.elf
@@ -241,7 +241,7 @@ extcoff: main.elf
 # Link: create ELF output file from library.
 #applet/$(TARGET).elf: $(TARGET).pde applet/core.a
 applet/main.elf: applet/main.o applet/core.a
-	$(LD) $(ALL_LDFLAGS) -o $@ applet/main.o applet/core.a 
+	$(LD) $(ALL_LDFLAGS) -o $@ applet/main.o applet/core.a -lc
 
 applet/core.a:	$(OBJ_MODULES)
 	@for k in $(OBJ_MODULES); do echo $(AR) rcs applet/core.a $$k; $(AR) rcs applet/core.a $$k; done
