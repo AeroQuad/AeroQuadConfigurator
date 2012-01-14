@@ -121,17 +121,18 @@ CXXINCS = -I$(ARDUINO) -I$(VARIANTS) -I$(ARDUINO_LIB)
 #CSTANDARD = -std=gnu99
 CDEBUG = -g$(DEBUG)
 #CWARN = -Wall -Wstrict-prototypes
-#CWARN = -Wall   # show all warnings
-CWARN = -w #suppress all warnings
+CWARN = -Wall   # show all warnings
+#CWARN = -w #suppress all warnings
 ####CTUNING = -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
 CTUNING = -ffunction-sections -fdata-sections
-CXXTUNING = -fno-exceptions -ffunction-sections -fdata-sections
+#CXXTUNING = -fno-exceptions -ffunction-sections -fdata-sections
+CXXTUNING = -fno-exceptions -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fpack-struct -fno-inline-small-functions -fno-split-wide-types -mcall-prologues -Wl,--relax,--gc-sections
 #CEXTRA = -Wa,-adhlns=$(<:.c=.lst)
 
 CFLAGS = $(CDEBUG) -O$(OPT) $(CWARN) $(CTUNING) $(CDEFS) $(CINCS) $(CSTANDARD) $(CEXTRA)
 CXXFLAGS = $(CDEBUG) -O$(OPT) $(CWARN) $(CXXTUNING) $(CDEFS) $(CINCS)
 #ASFLAGS = -Wa,-adhlns=$(<:.S=.lst),-gstabs
-LDFLAGS = -O$(OPT) -lm -Wl,--gc-sections
+LDFLAGS = -O$(OPT) -lm -Wl,--relax,--gc-sections
 
 
 # Programming support using avrdude. Settings and variables.
@@ -280,7 +281,4 @@ clean:
 	applet/main.map applet/main.sym applet/main.o applet/main.lss applet/core.a \
 	$(OBJ) $(LST) $(SRC:.c=.s) $(SRC:.c=.d) $(CXXSRC:.cpp=.s) $(CXXSRC:.cpp=.d)
 
-.PHONY:	all build elf hex eep lss sym program coff extcoff clean applet_files sizebefore sizeafter
-
-#include $(SRC:.c=.d)
-#include $(CXXSRC:.cpp=.d)
+.PHONY:	all build elf hex eep lss sym program coff extcoff clean applet_files sizebefore sizeafter upload
