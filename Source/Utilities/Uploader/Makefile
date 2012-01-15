@@ -47,7 +47,6 @@ include config.mk
 
 TARGET = $(notdir $(CURDIR))
 F_CPU = 16000000
-UPLOAD_RATE = 115200
 VERSION=100
 ARDUINO = $(INSTALL_DIR)/hardware/arduino/cores/arduino
 ARDUINO_LIB = $(INSTALL_DIR)/libraries
