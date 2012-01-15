@@ -24,6 +24,11 @@
 				<Item Name="AutoRenameFile.vi" Type="VI" URL="../AutoRenameFile.vi"/>
 				<Item Name="CopySourceFiles.vi" Type="VI" URL="../CopySourceFiles.vi"/>
 				<Item Name="ListLibraryFolders.vi" Type="VI" URL="../ListLibraryFolders.vi"/>
+				<Item Name="GetShortPathName.vi" Type="VI" URL="../GetShortPathName.vi"/>
+				<Item Name="DebugDOS.vi" Type="VI" URL="../DebugDOS.vi"/>
+			</Item>
+			<Item Name="Icon" Type="Folder">
+				<Item Name="AeroQuadMacIcon.ico" Type="Document" URL="../../../Icon/AeroQuadMacIcon.ico"/>
 			</Item>
 		</Item>
 		<Item Name="AeroQuadUploader.ini" Type="Document" URL="../AeroQuadUploader.ini"/>
@@ -75,7 +80,88 @@
 				<Item Name="Set Busy.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Set Busy.vi"/>
 				<Item Name="Unset Busy.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Unset Busy.vi"/>
 			</Item>
+			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
 		</Item>
-		<Item Name="Build Specifications" Type="Build"/>
+		<Item Name="Build Specifications" Type="Build">
+			<Item Name="Executable" Type="EXE">
+				<Property Name="App_copyErrors" Type="Bool">true</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{FE5838D3-F9AC-493C-B40D-F36C661B228E}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{769F3D19-BDEE-4E32-81E6-AD8C445D6F79}</Property>
+				<Property Name="App_INI_itemID" Type="Ref">/My Computer/AeroQuadUploader.ini</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">Executable</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">/Z/Ted On My Mac/GitHub/Configurator/builds/AeroQuadUploader/Executable</Property>
+				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+				<Property Name="Destination[0].destName" Type="Str">AeroQuadUploader.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">/Z/Ted On My Mac/GitHub/Configurator/builds/NI_AB_PROJECTNAME/Executable/AeroQuadUploader.exe</Property>
+				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">/Z/Ted On My Mac/GitHub/Configurator/builds/NI_AB_PROJECTNAME/Executable</Property>
+				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/Utilities/Icon/AeroQuadMacIcon.ico</Property>
+				<Property Name="Source[0].itemID" Type="Str">{418E5417-DB6D-433B-BF3C-62B6ADB2A07F}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/AeroQuadUploader.vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/My Computer/AeroQuadUploader.ini</Property>
+				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/My Computer/Utilities/Make/config.mk</Property>
+				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[4].itemID" Type="Ref">/My Computer/Utilities/Make/Makefile</Property>
+				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="SourceCount" Type="Int">5</Property>
+				<Property Name="TgtF_companyName" Type="Str">Carancho Engineering</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">Uploads AeroQuad flight software to flight control board</Property>
+				<Property Name="TgtF_fileVersion.major" Type="Int">1</Property>
+				<Property Name="TgtF_internalName" Type="Str">AeroQuad Uploader</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2012 Carancho Engineering</Property>
+				<Property Name="TgtF_productName" Type="Str">AeroQuad Uploader</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{7A1658A8-95BA-404F-A3C1-7AFC46272436}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">AeroQuadUploader.exe</Property>
+			</Item>
+			<Item Name="Debug" Type="EXE">
+				<Property Name="App_copyErrors" Type="Bool">true</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{99CCBA9E-1210-4157-A0E5-A21EAEEB3A55}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{89482D6A-B1AD-48A1-97D4-07014D642E2F}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">Debug</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">/Z/Ted On My Mac/GitHub/Configurator/builds/AeroQuadUploader/Debug</Property>
+				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+				<Property Name="Destination[0].destName" Type="Str">Debug.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">/Z/Ted On My Mac/GitHub/Configurator/builds/NI_AB_PROJECTNAME/Debug/Debug.exe</Property>
+				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">/Z/Ted On My Mac/GitHub/Configurator/builds/NI_AB_PROJECTNAME/Debug/data</Property>
+				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Source[0].itemID" Type="Str">{6D3FB9EE-7B59-49DC-8C8D-70DBFCA48E6A}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Utilities/Path/DebugDOS.vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="SourceCount" Type="Int">2</Property>
+				<Property Name="TgtF_companyName" Type="Str">Northrop Grumman</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">Debug</Property>
+				<Property Name="TgtF_fileVersion.major" Type="Int">1</Property>
+				<Property Name="TgtF_internalName" Type="Str">Debug</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2012 Northrop Grumman</Property>
+				<Property Name="TgtF_productName" Type="Str">Debug</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{9D2B147E-B7FD-468E-8E54-C76B1F838E01}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">Debug.exe</Property>
+			</Item>
+		</Item>
 	</Item>
 </Project>

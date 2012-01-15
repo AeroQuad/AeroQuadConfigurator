@@ -109,7 +109,7 @@ CXXDEFS = -DF_CPU=$(F_CPU)L -DARDUINO=$(VERSION)
 
 # Place -I options here
 CINCS = -I$(ARDUINO)  -I$(VARIANTS) -I$(ARDUINO_LIB)
-CINCS += -IC:\Development\arduino-1.0\libraries\EEPROM -IC:\Development\arduino-1.0\libraries\Wire -IC:\Development\arduino-1.0\libraries\Wire\utility
+CINCS += -I$(ARDUINO_LIB)\EEPROM -I$(ARDUINO_LIB)\Wire -I$(ARDUINO_LIB)\Wire\utility
 CINCS += $(AQ_INCS)
 CXXINCS = -I$(ARDUINO) -I$(VARIANTS) -I$(ARDUINO_LIB)
 
@@ -123,10 +123,10 @@ CDEBUG = -g$(DEBUG)
 #CWARN = -Wall -Wstrict-prototypes
 CWARN = -Wall   # show all warnings
 #CWARN = -w #suppress all warnings
-####CTUNING = -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
-CTUNING = -ffunction-sections -fdata-sections
+#CTUNING = -ffunction-sections -fdata-sections
 #CXXTUNING = -fno-exceptions -ffunction-sections -fdata-sections
-CXXTUNING = -fno-exceptions -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fpack-struct -fno-inline-small-functions -fno-split-wide-types -mcall-prologues -Wl,--relax,--gc-sections
+CTUNING = -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fpack-struct -fno-inline-small-functions -fno-split-wide-types -mcall-prologues 
+CXXTUNING = -fno-exceptions -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fpack-struct -fno-inline-small-functions -fno-split-wide-types -mcall-prologues
 #CEXTRA = -Wa,-adhlns=$(<:.c=.lst)
 
 CFLAGS = $(CDEBUG) -O$(OPT) $(CWARN) $(CTUNING) $(CDEFS) $(CINCS) $(CSTANDARD) $(CEXTRA)
@@ -203,7 +203,6 @@ sizebefore:
 sizeafter:
 	@if [ -f applet/main.elf ]; then echo; echo $(MSG_SIZE_AFTER); $(HEXSIZE); echo; fi
 
-
 # Convert ELF to COFF for use in debugging / simulating in AVR Studio or VMLAB.
 COFFCONVERT=$(OBJCOPY) --debugging \
 --change-section-address .data-0x800000 \
@@ -211,14 +210,11 @@ COFFCONVERT=$(OBJCOPY) --debugging \
 --change-section-address .noinit-0x800000 \
 --change-section-address .eeprom-0x810000
 
-
 coff: applet/main.elf
 	$(COFFCONVERT) -O coff-avr applet/main.elf main.cof
 
-
 extcoff: main.elf
 	$(COFFCONVERT) -O coff-ext-avr applet/main.elf main.cof
-
 
 .SUFFIXES: .elf .hex .eep .lss .sym
 
@@ -246,7 +242,6 @@ applet/main.elf: applet/main.o applet/core.a
 applet/core.a:	$(OBJ_MODULES)
 	@for k in $(OBJ_MODULES); do echo $(AR) rcs applet/core.a $$k; $(AR) rcs applet/core.a $$k; done
 
-
 # Compile: create object files from C++ source files.
 .cpp.o:
 	$(CXX) -c $(ALL_CXXFLAGS) $< -o $@
@@ -255,16 +250,13 @@ applet/core.a:	$(OBJ_MODULES)
 .c.o:
 	$(CC) -c $(ALL_CFLAGS) $< -o $@
 
-
 # Compile: create assembler files from C source files.
 .c.s:
 	$(CC) -S $(ALL_CFLAGS) $< -o $@
 
-
 # Assemble: create object files from assembler source files.
 .S.o:
 	$(CC) -c $(ALL_ASFLAGS) $< -o $@
-
 
 # Automatic dependencies
 %.d: %.c
@@ -272,7 +264,6 @@ applet/core.a:	$(OBJ_MODULES)
 
 %.d: %.cpp
 	$(CXX) -M $(ALL_CXXFLAGS) $< | sed "s;$(notdir $*).o:;$*.o $*.d:;" > $@
-
 
 # Target: clean project.
 clean:
