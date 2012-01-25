@@ -51,7 +51,6 @@ VERSION=100
 ARDUINO = $(INSTALL_DIR)/hardware/arduino/cores/arduino
 ARDUINO_LIB = $(INSTALL_DIR)/libraries
 AVR_TOOLS_PATH = $(INSTALL_DIR)/hardware/tools/avr/bin
-AVR_UTILS_PATH = $(INSTALL_DIR)/hardware/tools/avr/utils/bin
 AVRDUDE_PATH = $(INSTALL_DIR)/hardware/tools/avr/bin
 AQ_LIB = $(AQ)/Libraries
 
@@ -108,7 +107,7 @@ CXXDEFS = -DF_CPU=$(F_CPU)L -DARDUINO=$(VERSION)
 
 # Place -I options here
 CINCS = -I$(ARDUINO)  -I$(VARIANTS) -I$(ARDUINO_LIB)
-CINCS += -I$(ARDUINO_LIB)\EEPROM -I$(ARDUINO_LIB)\Wire -I$(ARDUINO_LIB)\Wire\utility
+CINCS += -I$(ARDUINO_LIB)/EEPROM -I$(ARDUINO_LIB)/Wire -I$(ARDUINO_LIB)/Wire/utility
 CINCS += $(AQ_INCS)
 CXXINCS = -I$(ARDUINO) -I$(VARIANTS) -I$(ARDUINO_LIB)
 
