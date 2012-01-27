@@ -191,6 +191,11 @@ sym: applet/main.sym
 # Program the device.
 upload: applet/main.hex
 	$(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH)
+	@echo "If upload was successful, select Done and the Configurator"
+	@echo "will automatically connect to the AeroQuad. Otherwise,"
+	@echo "verify correct selections were made and retry upload."
+	@echo
+#	@echo "Press [enter] to continue."
 
 # Display size of file.
 HEXSIZE = $(SIZE) --target=$(FORMAT) applet/main.hex

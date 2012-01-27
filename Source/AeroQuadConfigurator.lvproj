@@ -10,14 +10,19 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="Communication" Type="Folder" URL="../Communication">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
+		<Item Name="Communication" Type="Folder">
+			<Item Name="Communication.lvclass" Type="LVClass" URL="../Communication/Communication.lvclass"/>
 		</Item>
-		<Item Name="Dialog" Type="Folder" URL="../Dialog">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
+		<Item Name="Dialog" Type="Folder">
+			<Item Name="ErrorDialog.vi" Type="VI" URL="../Dialog/ErrorDialog.vi"/>
+			<Item Name="ReconnectDialog.vi" Type="VI" URL="../Dialog/ReconnectDialog.vi"/>
 		</Item>
-		<Item Name="Icon" Type="Folder" URL="../Icon">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
+		<Item Name="Icon" Type="Folder">
+			<Item Name="AeroQuad Icon.icns" Type="Document" URL="../Icon/AeroQuad Icon.icns"/>
+			<Item Name="AeroQuad_310x140.png" Type="Document" URL="../Icon/AeroQuad_310x140.png"/>
+			<Item Name="AeroQuad_1024x500.png" Type="Document" URL="../Icon/AeroQuad_1024x500.png"/>
+			<Item Name="AeroQuadIcon.icns" Type="Document" URL="../Icon/AeroQuadIcon.icns"/>
+			<Item Name="AeroQuadMacIcon.ico" Type="Document" URL="../Icon/AeroQuadMacIcon.ico"/>
 		</Item>
 		<Item Name="Support" Type="Folder">
 			<Item Name="SubPanel" Type="Folder">
@@ -89,6 +94,7 @@
 				<Item Name="Check Path.vi" Type="VI" URL="/&lt;vilib&gt;/picture/jpeg.llb/Check Path.vi"/>
 				<Item Name="Check Special Tags.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Check Special Tags.vi"/>
 				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
+				<Item Name="ClearError.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tdmsutil.llb/ClearError.vi"/>
 				<Item Name="Close File+.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Close File+.vi"/>
 				<Item Name="Close Registry Key.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Close Registry Key.vi"/>
 				<Item Name="compatReadText.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatReadText.vi"/>
@@ -108,6 +114,7 @@
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
 				<Item Name="Error Code Database.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Code Database.vi"/>
 				<Item Name="ErrWarn.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/ErrWarn.ctl"/>
+				<Item Name="Escape Characters for HTTP.vi" Type="VI" URL="/&lt;vilib&gt;/printing/PathToURL.llb/Escape Characters for HTTP.vi"/>
 				<Item Name="eventvkey.ctl" Type="VI" URL="/&lt;vilib&gt;/event_ctls.llb/eventvkey.ctl"/>
 				<Item Name="ex_CorrectErrorChain.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_CorrectErrorChain.vi"/>
 				<Item Name="fileViewerConfigData.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/tdmsutil.llb/fileViewerConfigData.ctl"/>
@@ -120,6 +127,7 @@
 				<Item Name="Get File Extension.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Get File Extension.vi"/>
 				<Item Name="Get String Text Bounds.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Get String Text Bounds.vi"/>
 				<Item Name="Get Text Rect.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/Get Text Rect.vi"/>
+				<Item Name="Get Type of Variant.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/GetType.llb/Get Type of Variant.vi"/>
 				<Item Name="getChannelList.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tdmsutil.llb/getChannelList.vi"/>
 				<Item Name="GetHelpDir.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/GetHelpDir.vi"/>
 				<Item Name="getNamesFromPath.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tdmsutil.llb/getNamesFromPath.vi"/>
@@ -131,6 +139,7 @@
 				<Item Name="Longest Line Length in Pixels.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Longest Line Length in Pixels.vi"/>
 				<Item Name="LV3DPointTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LV3DPointTypeDef.ctl"/>
 				<Item Name="LVBoundsTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVBoundsTypeDef.ctl"/>
+				<Item Name="LVRectTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRectTypeDef.ctl"/>
 				<Item Name="LVRowAndColumnTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRowAndColumnTypeDef.ctl"/>
 				<Item Name="LVRowAndColumnUnsignedTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRowAndColumnUnsignedTypeDef.ctl"/>
 				<Item Name="NI_3D Picture Control.lvlib" Type="Library" URL="/&lt;vilib&gt;/picture/3D Picture Control/NI_3D Picture Control.lvlib"/>
@@ -143,15 +152,30 @@
 				<Item Name="Number of Waveform Samples.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/Number of Waveform Samples.vi"/>
 				<Item Name="Open File+.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Open File+.vi"/>
 				<Item Name="Open Registry Key.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Open Registry Key.vi"/>
+				<Item Name="Open URL in Default Browser (path).vi" Type="VI" URL="/&lt;vilib&gt;/Platform/browser.llb/Open URL in Default Browser (path).vi"/>
+				<Item Name="Open URL in Default Browser (string).vi" Type="VI" URL="/&lt;vilib&gt;/Platform/browser.llb/Open URL in Default Browser (string).vi"/>
+				<Item Name="Open URL in Default Browser core.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/browser.llb/Open URL in Default Browser core.vi"/>
+				<Item Name="Open URL in Default Browser.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/browser.llb/Open URL in Default Browser.vi"/>
 				<Item Name="panelResize.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tdmsutil.llb/panelResize.vi"/>
+				<Item Name="Path to URL.vi" Type="VI" URL="/&lt;vilib&gt;/printing/PathToURL.llb/Path to URL.vi"/>
 				<Item Name="Read Characters From File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Characters From File.vi"/>
 				<Item Name="Read File+ (string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read File+ (string).vi"/>
 				<Item Name="Read JPEG File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/jpeg.llb/Read JPEG File.vi"/>
 				<Item Name="Read PNG File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/png.llb/Read PNG File.vi"/>
+				<Item Name="Read Registry Value DWORD.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Read Registry Value DWORD.vi"/>
 				<Item Name="Read Registry Value Simple STR.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Read Registry Value Simple STR.vi"/>
+				<Item Name="Read Registry Value Simple U32.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Read Registry Value Simple U32.vi"/>
 				<Item Name="Read Registry Value Simple.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Read Registry Value Simple.vi"/>
+				<Item Name="Read Registry Value STR.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Read Registry Value STR.vi"/>
+				<Item Name="Read Registry Value.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Read Registry Value.vi"/>
 				<Item Name="Recursive File List.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Recursive File List.vi"/>
+				<Item Name="Registry Handle Master.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Registry Handle Master.vi"/>
+				<Item Name="Registry refnum.ctl" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Registry refnum.ctl"/>
 				<Item Name="Registry RtKey.ctl" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Registry RtKey.ctl"/>
+				<Item Name="Registry SAM.ctl" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Registry SAM.ctl"/>
+				<Item Name="Registry Simplify Data Type.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Registry Simplify Data Type.vi"/>
+				<Item Name="Registry View.ctl" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Registry View.ctl"/>
+				<Item Name="Registry WinErr-LVErr.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Registry WinErr-LVErr.vi"/>
 				<Item Name="Search and Replace Pattern.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Search and Replace Pattern.vi"/>
 				<Item Name="Set Bold Text.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Set Bold Text.vi"/>
 				<Item Name="Set Busy.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Set Busy.vi"/>
@@ -163,10 +187,12 @@
 				<Item Name="Simple Error Handler.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Simple Error Handler.vi"/>
 				<Item Name="Space Constant.vi" Type="VI" URL="/&lt;vilib&gt;/dlg_ctls.llb/Space Constant.vi"/>
 				<Item Name="status.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tdmsutil.llb/status.vi"/>
+				<Item Name="STR_ASCII-Unicode.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/STR_ASCII-Unicode.vi"/>
 				<Item Name="subFile Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/FileDialogBlock.llb/subFile Dialog.vi"/>
 				<Item Name="subTimeDelay.vi" Type="VI" URL="/&lt;vilib&gt;/express/express execution control/TimeDelayBlock.llb/subTimeDelay.vi"/>
 				<Item Name="System Exec.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/system.llb/System Exec.vi"/>
 				<Item Name="TagReturnType.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/TagReturnType.ctl"/>
+				<Item Name="TDMSFileViewer_LaunchHelp.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tdmsutil.llb/TDMSFileViewer_LaunchHelp.vi"/>
 				<Item Name="TDMSFileViewerLocalizedText.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tdmsutil.llb/TDMSFileViewerLocalizedText.vi"/>
 				<Item Name="Three Button Dialog CORE.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Three Button Dialog CORE.vi"/>
 				<Item Name="Three Button Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Three Button Dialog.vi"/>
@@ -174,6 +200,7 @@
 				<Item Name="Type Enum.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/GetType.llb/Type Enum.ctl"/>
 				<Item Name="Uncompress Digital.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/DWDT.llb/Uncompress Digital.vi"/>
 				<Item Name="Unset Busy.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Unset Busy.vi"/>
+				<Item Name="VariantType to Type Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/GetType.llb/VariantType to Type Code.vi"/>
 				<Item Name="VariantType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/VariantDataType/VariantType.lvlib"/>
 				<Item Name="VISA Configure Serial Port" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port"/>
 				<Item Name="VISA Configure Serial Port (Instr).vi" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port (Instr).vi"/>
@@ -189,12 +216,14 @@
 				<Item Name="WDT Waveform Duration DBL.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Waveform Duration DBL.vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
+			<Item Name="Advapi32.dll" Type="Document" URL="Advapi32.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
 			<Item Name="AeroQuadConfigurator.rtm" Type="Document" URL="../AeroQuadConfigurator.rtm"/>
 			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="lvanlys.framework" Type="Document" URL="../../../../../../Applications/National Instruments/LabVIEW 2010/resource/lvanlys.framework"/>
-			<Item Name="visarc" Type="Document" URL="../../../../../../Applications/National Instruments/LabVIEW 2010/resource/visarc"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="/C/Program Files/National Instruments/LabVIEW 2010/resource/lvanlys.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="Application" Type="EXE">
@@ -208,14 +237,13 @@
 				<Property Name="Bld_localDestDir" Type="Path">../builds/AeroQuadConfigurator/Application</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Destination[0].destName" Type="Str">AeroQuadConfigurator.app</Property>
-				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/Application/AeroQuadConfigurator.app</Property>
+				<Property Name="Destination[0].destName" Type="Str">AeroQuadConfigurator.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/Application/AeroQuadConfigurator.exe</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/Application/Support</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/Icon/AeroQuadMacIcon.ico</Property>
-				<Property Name="SourceCount" Type="Int">8</Property>
 				<Property Name="Source[0].itemID" Type="Str">{2A07F85B-D868-43A2-8384-9FA66B570E3C}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
@@ -241,6 +269,7 @@
 				<Property Name="Source[7].destinationIndex" Type="Int">1</Property>
 				<Property Name="Source[7].itemID" Type="Ref">/My Computer/Utilities/Uploader/Makefile</Property>
 				<Property Name="Source[7].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="SourceCount" Type="Int">8</Property>
 				<Property Name="TgtF_companyName" Type="Str">Carancho Engineering</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">Configuration tool for the AeroQuad MultiCopter</Property>
 				<Property Name="TgtF_fileVersion.build" Type="Int">8</Property>
@@ -249,7 +278,7 @@
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright 2011 Carancho Engineering</Property>
 				<Property Name="TgtF_productName" Type="Str">AeroQuad Configurator</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{284B0725-5483-41EE-ACFC-CE779783AA8D}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">AeroQuadConfigurator.app</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">AeroQuadConfigurator.exe</Property>
 			</Item>
 			<Item Name="Application (Mac)" Type="EXE">
 				<Property Name="App_copyErrors" Type="Bool">true</Property>
@@ -262,16 +291,14 @@
 				<Property Name="Bld_localDestDir" Type="Path">../builds/AeroQuadConfigurator/Application (Mac)</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Destination[0].destName" Type="Str">AeroQuad Configurator.app</Property>
-				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/Application (Mac)/AeroQuad Configurator.app</Property>
-				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].destName" Type="Str">AeroQuad Configurator.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/Application (Mac)/AeroQuad Configurator.exe</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/Application (Mac)/Support</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/Icon/AeroQuadIcon.icns</Property>
-				<Property Name="SourceCount" Type="Int">6</Property>
-				<Property Name="Source[0].itemID" Type="Str">{FAA17499-47FC-11E1-A7F1-CBBEF74E8B02}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{87CB4F55-48B8-11E1-A7F1-85E7978D2F30}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/AeroQuadConfigurator.vi</Property>
@@ -290,6 +317,16 @@
 				<Property Name="Source[5].itemID" Type="Ref">/My Computer/Support</Property>
 				<Property Name="Source[5].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[5].type" Type="Str">Container</Property>
+				<Property Name="Source[6].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[6].itemID" Type="Ref">/My Computer/Utilities/Uploader/AeroQuadUploader.ini</Property>
+				<Property Name="Source[6].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[7].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[7].itemID" Type="Ref">/My Computer/Utilities/Uploader/Makefile</Property>
+				<Property Name="Source[7].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[8].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[8].itemID" Type="Ref">/My Computer/Utilities/Uploader/config.mk</Property>
+				<Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="SourceCount" Type="Int">9</Property>
 				<Property Name="TgtF_companyName" Type="Str">Carancho Engineering</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">Configuration tool for the AeroQuad QuadCopter</Property>
 				<Property Name="TgtF_fileVersion.major" Type="Int">3</Property>
@@ -297,19 +334,17 @@
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright ? 2011 Carancho Engineering</Property>
 				<Property Name="TgtF_productName" Type="Str">AeroQuad Configurator</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{0E7F3A35-897D-11E0-8444-E8A165B1A10F}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">AeroQuad Configurator.app</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">AeroQuad Configurator.exe</Property>
 			</Item>
 			<Item Name="Installer" Type="Installer">
-				<Property Name="DestinationCount" Type="Int">1</Property>
 				<Property Name="Destination[0].name" Type="Str">AeroQuad Configurator</Property>
 				<Property Name="Destination[0].parent" Type="Str">{3912416A-D2E5-411B-AFEE-B63654D690C0}</Property>
 				<Property Name="Destination[0].tag" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
 				<Property Name="Destination[0].type" Type="Str">userFolder</Property>
-				<Property Name="DistPartCount" Type="Int">2</Property>
+				<Property Name="DestinationCount" Type="Int">1</Property>
 				<Property Name="DistPart[0].flavorID" Type="Str">DefaultFull</Property>
 				<Property Name="DistPart[0].productID" Type="Str">{4C1F4C94-7160-4A79-8BE3-4BACCFDE93DF}</Property>
 				<Property Name="DistPart[0].productName" Type="Str">NI LabVIEW Run-Time Engine 2010 SP1</Property>
-				<Property Name="DistPart[0].SoftDepCount" Type="Int">7</Property>
 				<Property Name="DistPart[0].SoftDep[0].dependencyKey" Type="Str">CKBAAA.9EF852AB_A55D_40BB_9800_F82E90432A9E</Property>
 				<Property Name="DistPart[0].SoftDep[0].productName" Type="Str">NI System Web Server 1.1</Property>
 				<Property Name="DistPart[0].SoftDep[1].dependencyKey" Type="Str">EKBAAA.9EF852AB_A55D_40BB_9800_F82E90432A9E</Property>
@@ -324,13 +359,13 @@
 				<Property Name="DistPart[0].SoftDep[5].productName" Type="Str">NI SSL Support</Property>
 				<Property Name="DistPart[0].SoftDep[6].dependencyKey" Type="Str">KKBAAA.9EF852AB_A55D_40BB_9800_F82E90432A9E</Property>
 				<Property Name="DistPart[0].SoftDep[6].productName" Type="Str">NI Web Application Server 1.1</Property>
+				<Property Name="DistPart[0].SoftDepCount" Type="Int">7</Property>
 				<Property Name="DistPart[0].upgradeCode" Type="Str">{9F6EADB1-707C-41AF-8F3D-FB856FA8BD1C}</Property>
 				<Property Name="DistPart[1].flavorID" Type="Str">_deployment_</Property>
 				<Property Name="DistPart[1].productID" Type="Str">{85BA3FCF-AA00-4151-B97D-84A221E8198A}</Property>
 				<Property Name="DistPart[1].productName" Type="Str">NI-VISA Runtime 5.0.3</Property>
 				<Property Name="DistPart[1].upgradeCode" Type="Str">{8627993A-3F66-483C-A562-0D3BA3F267B1}</Property>
-				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
-				<Property Name="InstSpecVersion" Type="Str">10018002</Property>
+				<Property Name="DistPartCount" Type="Int">2</Property>
 				<Property Name="INST_author" Type="Str">Northrop Grumman</Property>
 				<Property Name="INST_autoIncrement" Type="Bool">true</Property>
 				<Property Name="INST_buildLocation" Type="Path">../builds/AeroQuadConfigurator/Installer</Property>
@@ -339,7 +374,9 @@
 				<Property Name="INST_defaultDir" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
 				<Property Name="INST_includeError" Type="Bool">false</Property>
 				<Property Name="INST_productName" Type="Str">AeroQuad Configurator</Property>
-				<Property Name="INST_productVersion" Type="Str">3.0.23</Property>
+				<Property Name="INST_productVersion" Type="Str">3.0.25</Property>
+				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
+				<Property Name="InstSpecVersion" Type="Str">10018002</Property>
 				<Property Name="MSI_arpCompany" Type="Str">Carancho Engineering LLC</Property>
 				<Property Name="MSI_arpURL" Type="Str">www.AeroQuad.com</Property>
 				<Property Name="MSI_distID" Type="Str">{A07D00A7-DFF4-40CF-B7E4-EB348A35D9B7}</Property>
@@ -347,80 +384,82 @@
 				<Property Name="MSI_upgradeCode" Type="Str">{5439E616-1F3C-4A3F-A6B0-B5C265377EA0}</Property>
 				<Property Name="MSI_windowMessage" Type="Str">Thanks for installing the AeroQuad Configurator!  This tool is used to setup and configure your AeroQuad quadcopter in prepartion of flight.  If you require any technical support, please visit our forums at www.AeroQuad.com.</Property>
 				<Property Name="MSI_windowTitle" Type="Str">AeroQuad Configurator Installer</Property>
-				<Property Name="RegDestCount" Type="Int">1</Property>
 				<Property Name="RegDest[0].dirName" Type="Str">Software</Property>
 				<Property Name="RegDest[0].dirTag" Type="Str">{DDFAFC8B-E728-4AC8-96DE-B920EBB97A86}</Property>
 				<Property Name="RegDest[0].parentTag" Type="Str">2</Property>
-				<Property Name="SourceCount" Type="Int">1</Property>
+				<Property Name="RegDestCount" Type="Int">1</Property>
 				<Property Name="Source[0].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
-				<Property Name="Source[0].FileCount" Type="Int">13</Property>
 				<Property Name="Source[0].File[0].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
 				<Property Name="Source[0].File[0].name" Type="Str">AeroQuadConfigurator.exe</Property>
-				<Property Name="Source[0].File[0].ShortcutCount" Type="Int">1</Property>
 				<Property Name="Source[0].File[0].Shortcut[0].destIndex" Type="Int">0</Property>
 				<Property Name="Source[0].File[0].Shortcut[0].name" Type="Str">AeroQuad Configurator</Property>
 				<Property Name="Source[0].File[0].Shortcut[0].subDir" Type="Str">AeroQuad Configurator</Property>
+				<Property Name="Source[0].File[0].ShortcutCount" Type="Int">1</Property>
 				<Property Name="Source[0].File[0].tag" Type="Str">{284B0725-5483-41EE-ACFC-CE779783AA8D}</Property>
-				<Property Name="Source[0].File[10].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
-				<Property Name="Source[0].File[10].name" Type="Str">Quad X.stl</Property>
-				<Property Name="Source[0].File[10].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Quad X.stl</Property>
-				<Property Name="Source[0].File[10].unlock" Type="Bool">true</Property>
-				<Property Name="Source[0].File[11].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
-				<Property Name="Source[0].File[11].name" Type="Str">Quad Y4.stl</Property>
-				<Property Name="Source[0].File[11].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Quad Y4.stl</Property>
-				<Property Name="Source[0].File[11].unlock" Type="Bool">true</Property>
-				<Property Name="Source[0].File[12].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
-				<Property Name="Source[0].File[12].name" Type="Str">Tri.stl</Property>
-				<Property Name="Source[0].File[12].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Tri.stl</Property>
-				<Property Name="Source[0].File[12].unlock" Type="Bool">true</Property>
 				<Property Name="Source[0].File[1].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
 				<Property Name="Source[0].File[1].name" Type="Str">AeroQuadConfigurator.ini</Property>
 				<Property Name="Source[0].File[1].tag" Type="Str">{A65D0546-7FCE-43A7-AA54-2EB0154E77A0}</Property>
 				<Property Name="Source[0].File[1].unlock" Type="Bool">true</Property>
+				<Property Name="Source[0].File[10].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
+				<Property Name="Source[0].File[10].name" Type="Str">Quad +.stl</Property>
+				<Property Name="Source[0].File[10].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Quad +.stl</Property>
+				<Property Name="Source[0].File[10].unlock" Type="Bool">true</Property>
+				<Property Name="Source[0].File[11].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
+				<Property Name="Source[0].File[11].name" Type="Str">Quad X.stl</Property>
+				<Property Name="Source[0].File[11].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Quad X.stl</Property>
+				<Property Name="Source[0].File[11].unlock" Type="Bool">true</Property>
+				<Property Name="Source[0].File[12].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
+				<Property Name="Source[0].File[12].name" Type="Str">Quad Y4.stl</Property>
+				<Property Name="Source[0].File[12].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Quad Y4.stl</Property>
+				<Property Name="Source[0].File[12].unlock" Type="Bool">true</Property>
+				<Property Name="Source[0].File[13].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
+				<Property Name="Source[0].File[13].name" Type="Str">Tri.stl</Property>
+				<Property Name="Source[0].File[13].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Tri.stl</Property>
+				<Property Name="Source[0].File[13].unlock" Type="Bool">true</Property>
 				<Property Name="Source[0].File[2].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
-				<Property Name="Source[0].File[2].name" Type="Str">AccelModel.stl</Property>
-				<Property Name="Source[0].File[2].tag" Type="Ref">/My Computer/Support/SubPanel/Initialize/AccelModel.stl</Property>
+				<Property Name="Source[0].File[2].name" Type="Str">AeroQuadUploader.ini</Property>
+				<Property Name="Source[0].File[2].tag" Type="Ref">/My Computer/Utilities/Uploader/AeroQuadUploader.ini</Property>
 				<Property Name="Source[0].File[2].unlock" Type="Bool">true</Property>
 				<Property Name="Source[0].File[3].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
-				<Property Name="Source[0].File[3].name" Type="Str">Hex +.stl</Property>
-				<Property Name="Source[0].File[3].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Hex +.stl</Property>
+				<Property Name="Source[0].File[3].name" Type="Str">AccelModel.stl</Property>
+				<Property Name="Source[0].File[3].tag" Type="Ref">/My Computer/Support/SubPanel/Initialize/AccelModel.stl</Property>
 				<Property Name="Source[0].File[3].unlock" Type="Bool">true</Property>
 				<Property Name="Source[0].File[4].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
-				<Property Name="Source[0].File[4].name" Type="Str">Hex X.stl</Property>
-				<Property Name="Source[0].File[4].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Hex X.stl</Property>
+				<Property Name="Source[0].File[4].name" Type="Str">Hex +.stl</Property>
+				<Property Name="Source[0].File[4].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Hex +.stl</Property>
 				<Property Name="Source[0].File[4].unlock" Type="Bool">true</Property>
 				<Property Name="Source[0].File[5].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
-				<Property Name="Source[0].File[5].name" Type="Str">Hex Y6.stl</Property>
-				<Property Name="Source[0].File[5].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Hex Y6.stl</Property>
+				<Property Name="Source[0].File[5].name" Type="Str">Hex X.stl</Property>
+				<Property Name="Source[0].File[5].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Hex X.stl</Property>
 				<Property Name="Source[0].File[5].unlock" Type="Bool">true</Property>
 				<Property Name="Source[0].File[6].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
-				<Property Name="Source[0].File[6].name" Type="Str">Octo X+.stl</Property>
-				<Property Name="Source[0].File[6].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Octo X+.stl</Property>
+				<Property Name="Source[0].File[6].name" Type="Str">Hex Y6.stl</Property>
+				<Property Name="Source[0].File[6].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Hex Y6.stl</Property>
 				<Property Name="Source[0].File[6].unlock" Type="Bool">true</Property>
 				<Property Name="Source[0].File[7].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
-				<Property Name="Source[0].File[7].name" Type="Str">Octo X.stl</Property>
-				<Property Name="Source[0].File[7].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Octo X.stl</Property>
+				<Property Name="Source[0].File[7].name" Type="Str">Octo X+.stl</Property>
+				<Property Name="Source[0].File[7].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Octo X+.stl</Property>
 				<Property Name="Source[0].File[7].unlock" Type="Bool">true</Property>
 				<Property Name="Source[0].File[8].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
-				<Property Name="Source[0].File[8].name" Type="Str">Octo X8.stl</Property>
-				<Property Name="Source[0].File[8].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Octo X8.stl</Property>
+				<Property Name="Source[0].File[8].name" Type="Str">Octo X.stl</Property>
+				<Property Name="Source[0].File[8].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Octo X.stl</Property>
 				<Property Name="Source[0].File[8].unlock" Type="Bool">true</Property>
 				<Property Name="Source[0].File[9].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
-				<Property Name="Source[0].File[9].name" Type="Str">Quad +.stl</Property>
-				<Property Name="Source[0].File[9].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Quad +.stl</Property>
+				<Property Name="Source[0].File[9].name" Type="Str">Octo X8.stl</Property>
+				<Property Name="Source[0].File[9].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Octo X8.stl</Property>
 				<Property Name="Source[0].File[9].unlock" Type="Bool">true</Property>
+				<Property Name="Source[0].FileCount" Type="Int">14</Property>
 				<Property Name="Source[0].name" Type="Str">Application</Property>
 				<Property Name="Source[0].tag" Type="Ref">/My Computer/Build Specifications/Application</Property>
 				<Property Name="Source[0].type" Type="Str">EXE</Property>
+				<Property Name="SourceCount" Type="Int">1</Property>
 			</Item>
 			<Item Name="Updater" Type="Installer">
-				<Property Name="DestinationCount" Type="Int">1</Property>
 				<Property Name="Destination[0].name" Type="Str">AeroQuad Configurator</Property>
 				<Property Name="Destination[0].parent" Type="Str">{3912416A-D2E5-411B-AFEE-B63654D690C0}</Property>
 				<Property Name="Destination[0].tag" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
 				<Property Name="Destination[0].type" Type="Str">userFolder</Property>
-				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
-				<Property Name="InstSpecVersion" Type="Str">10018002</Property>
+				<Property Name="DestinationCount" Type="Int">1</Property>
 				<Property Name="INST_author" Type="Str">Northrop Grumman</Property>
 				<Property Name="INST_autoIncrement" Type="Bool">true</Property>
 				<Property Name="INST_buildLocation" Type="Path">../builds/AeroQuadConfigurator/Updater</Property>
@@ -429,7 +468,9 @@
 				<Property Name="INST_defaultDir" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
 				<Property Name="INST_includeError" Type="Bool">false</Property>
 				<Property Name="INST_productName" Type="Str">AeroQuad Configurator</Property>
-				<Property Name="INST_productVersion" Type="Str">3.0.34</Property>
+				<Property Name="INST_productVersion" Type="Str">3.0.36</Property>
+				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
+				<Property Name="InstSpecVersion" Type="Str">10018002</Property>
 				<Property Name="MSI_arpCompany" Type="Str">Carancho Engineering LLC</Property>
 				<Property Name="MSI_arpURL" Type="Str">www.AeroQuad.com</Property>
 				<Property Name="MSI_distID" Type="Str">{1FC2427F-269D-4D3E-B167-9B9C426D06D6}</Property>
@@ -437,20 +478,22 @@
 				<Property Name="MSI_upgradeCode" Type="Str">{B23FBCB3-F40E-40C2-9012-0CA63C1F01E9}</Property>
 				<Property Name="MSI_windowMessage" Type="Str">Thanks for installing the AeroQuad Configurator!  This tool is used to setup and configure your AeroQuad multicopter in prepartion of flight.  If you require any technical support, please visit our forums at www.AeroQuad.com.</Property>
 				<Property Name="MSI_windowTitle" Type="Str">AeroQuad Configurator Installer</Property>
-				<Property Name="RegDestCount" Type="Int">1</Property>
 				<Property Name="RegDest[0].dirName" Type="Str">Software</Property>
 				<Property Name="RegDest[0].dirTag" Type="Str">{DDFAFC8B-E728-4AC8-96DE-B920EBB97A86}</Property>
 				<Property Name="RegDest[0].parentTag" Type="Str">2</Property>
-				<Property Name="SourceCount" Type="Int">1</Property>
+				<Property Name="RegDestCount" Type="Int">1</Property>
 				<Property Name="Source[0].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
-				<Property Name="Source[0].FileCount" Type="Int">15</Property>
 				<Property Name="Source[0].File[0].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
 				<Property Name="Source[0].File[0].name" Type="Str">AeroQuadConfigurator.exe</Property>
-				<Property Name="Source[0].File[0].ShortcutCount" Type="Int">1</Property>
 				<Property Name="Source[0].File[0].Shortcut[0].destIndex" Type="Int">0</Property>
 				<Property Name="Source[0].File[0].Shortcut[0].name" Type="Str">AeroQuad Configurator</Property>
 				<Property Name="Source[0].File[0].Shortcut[0].subDir" Type="Str">AeroQuad Configurator</Property>
+				<Property Name="Source[0].File[0].ShortcutCount" Type="Int">1</Property>
 				<Property Name="Source[0].File[0].tag" Type="Str">{284B0725-5483-41EE-ACFC-CE779783AA8D}</Property>
+				<Property Name="Source[0].File[1].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
+				<Property Name="Source[0].File[1].name" Type="Str">AeroQuadConfigurator.ini</Property>
+				<Property Name="Source[0].File[1].tag" Type="Str">{A65D0546-7FCE-43A7-AA54-2EB0154E77A0}</Property>
+				<Property Name="Source[0].File[1].unlock" Type="Bool">true</Property>
 				<Property Name="Source[0].File[10].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
 				<Property Name="Source[0].File[10].name" Type="Str">Octo X8.stl</Property>
 				<Property Name="Source[0].File[10].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Octo X8.stl</Property>
@@ -471,10 +514,6 @@
 				<Property Name="Source[0].File[14].name" Type="Str">Tri.stl</Property>
 				<Property Name="Source[0].File[14].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Tri.stl</Property>
 				<Property Name="Source[0].File[14].unlock" Type="Bool">true</Property>
-				<Property Name="Source[0].File[1].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
-				<Property Name="Source[0].File[1].name" Type="Str">AeroQuadConfigurator.ini</Property>
-				<Property Name="Source[0].File[1].tag" Type="Str">{A65D0546-7FCE-43A7-AA54-2EB0154E77A0}</Property>
-				<Property Name="Source[0].File[1].unlock" Type="Bool">true</Property>
 				<Property Name="Source[0].File[2].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
 				<Property Name="Source[0].File[2].name" Type="Str">AeroQuadUploader.ini</Property>
 				<Property Name="Source[0].File[2].tag" Type="Ref">/My Computer/Utilities/Uploader/AeroQuadUploader.ini</Property>
@@ -507,9 +546,11 @@
 				<Property Name="Source[0].File[9].name" Type="Str">Octo X.stl</Property>
 				<Property Name="Source[0].File[9].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Octo X.stl</Property>
 				<Property Name="Source[0].File[9].unlock" Type="Bool">true</Property>
+				<Property Name="Source[0].FileCount" Type="Int">15</Property>
 				<Property Name="Source[0].name" Type="Str">Application</Property>
 				<Property Name="Source[0].tag" Type="Ref">/My Computer/Build Specifications/Application</Property>
 				<Property Name="Source[0].type" Type="Str">EXE</Property>
+				<Property Name="SourceCount" Type="Int">1</Property>
 			</Item>
 		</Item>
 	</Item>

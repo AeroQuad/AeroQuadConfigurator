@@ -20,6 +20,9 @@
 				<Item Name="Makefile" Type="Document" URL="../Makefile"/>
 			</Item>
 			<Item Name="Path" Type="Folder">
+				<Item Name="ConvertMac2UnixFiles.vi" Type="VI" URL="../ConvertMac2UnixFiles.vi"/>
+				<Item Name="Mac2LinuxPath.vi" Type="VI" URL="../../Mac2LinuxPath.vi"/>
+				<Item Name="RunAppleScriptCode.vi" Type="VI" URL="../RunAppleScriptCode.vi"/>
 				<Item Name="GenerateTemporaryPath.vi" Type="VI" URL="../GenerateTemporaryPath.vi"/>
 				<Item Name="AutoRenameFile.vi" Type="VI" URL="../AutoRenameFile.vi"/>
 				<Item Name="CopySourceFiles.vi" Type="VI" URL="../CopySourceFiles.vi"/>
@@ -71,7 +74,6 @@
 				<Item Name="BuildHelpPath.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/BuildHelpPath.vi"/>
 				<Item Name="GetHelpDir.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/GetHelpDir.vi"/>
 				<Item Name="Get File Extension.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Get File Extension.vi"/>
-				<Item Name="System Exec.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/system.llb/System Exec.vi"/>
 				<Item Name="List Directory and LLBs.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/List Directory and LLBs.vi"/>
 				<Item Name="Recursive File List.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Recursive File List.vi"/>
 				<Item Name="Set Cursor (Icon Pict).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Set Cursor (Icon Pict).vi"/>
@@ -79,6 +81,8 @@
 				<Item Name="Set Cursor.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Set Cursor.vi"/>
 				<Item Name="Set Busy.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Set Busy.vi"/>
 				<Item Name="Unset Busy.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Unset Busy.vi"/>
+				<Item Name="Normalize End Of Line.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Normalize End Of Line.vi"/>
+				<Item Name="System Exec.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/system.llb/System Exec.vi"/>
 				<Item Name="subTimeDelay.vi" Type="VI" URL="/&lt;vilib&gt;/express/express execution control/TimeDelayBlock.llb/subTimeDelay.vi"/>
 			</Item>
 			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
@@ -124,7 +128,7 @@
 				<Property Name="TgtF_fileDescription" Type="Str">Uploads AeroQuad flight software to flight control board</Property>
 				<Property Name="TgtF_fileVersion.major" Type="Int">1</Property>
 				<Property Name="TgtF_internalName" Type="Str">AeroQuad Uploader</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2012 Carancho Engineering</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright ? 2012 Carancho Engineering</Property>
 				<Property Name="TgtF_productName" Type="Str">AeroQuad Uploader</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{7A1658A8-95BA-404F-A3C1-7AFC46272436}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">AeroQuadUploader.exe</Property>
@@ -158,10 +162,56 @@
 				<Property Name="TgtF_fileDescription" Type="Str">Debug</Property>
 				<Property Name="TgtF_fileVersion.major" Type="Int">1</Property>
 				<Property Name="TgtF_internalName" Type="Str">Debug</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2012 Northrop Grumman</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright ? 2012 Northrop Grumman</Property>
 				<Property Name="TgtF_productName" Type="Str">Debug</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{9D2B147E-B7FD-468E-8E54-C76B1F838E01}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">Debug.exe</Property>
+			</Item>
+			<Item Name="Executable (Mac)" Type="EXE">
+				<Property Name="App_copyErrors" Type="Bool">true</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{5302552B-4853-11E1-8444-DDE9BD01BF66}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{5302474D-4853-11E1-8444-AEFEBC36BDB3}</Property>
+				<Property Name="App_INI_itemID" Type="Ref">/My Computer/AeroQuadUploader.ini</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">Executable (Mac)</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">/Macintosh HD/Users/Ted/GitHub/Configurator/builds/AeroQuadUploader/AeroQuadUploader(Mac)</Property>
+				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+				<Property Name="Destination[0].destName" Type="Str">AeroQuadUploader.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">/Macintosh HD/Users/Ted/GitHub/Configurator/builds/NI_AB_PROJECTNAME/AeroQuadUploader(Mac)/AeroQuadUploader.exe</Property>
+				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">/Macintosh HD/Users/Ted/GitHub/Configurator/builds/NI_AB_PROJECTNAME/AeroQuadUploader(Mac)/AeroQuadUploader.app/Support</Property>
+				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Source[0].itemID" Type="Str">{4D238FDF-4853-11E1-A7F1-A2C9CE5A9501}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/AeroQuadUploader.vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/My Computer/AeroQuadUploader.ini</Property>
+				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/My Computer/Utilities/Make/config.mk</Property>
+				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[4].itemID" Type="Ref">/My Computer/Utilities/Make/Makefile</Property>
+				<Property Name="Source[5].Container.applyInclusion" Type="Bool">true</Property>
+				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[5].itemID" Type="Ref">/My Computer/Utilities</Property>
+				<Property Name="Source[5].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[5].type" Type="Str">Container</Property>
+				<Property Name="SourceCount" Type="Int">6</Property>
+				<Property Name="TgtF_companyName" Type="Str">Carancho Engineering</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">Uploads AeroQuad flight software to flight control board</Property>
+				<Property Name="TgtF_fileVersion.major" Type="Int">1</Property>
+				<Property Name="TgtF_internalName" Type="Str">AeroQuad Uploader</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright ? 2012 Carancho Engineering</Property>
+				<Property Name="TgtF_productName" Type="Str">AeroQuad Uploader</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{53022939-4853-11E1-8444-FA8F818D44EE}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">AeroQuadUploader.exe</Property>
 			</Item>
 		</Item>
 	</Item>
