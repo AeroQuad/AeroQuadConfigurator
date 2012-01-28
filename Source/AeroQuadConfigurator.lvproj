@@ -10,19 +10,14 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="Communication" Type="Folder">
-			<Item Name="Communication.lvclass" Type="LVClass" URL="../Communication/Communication.lvclass"/>
+		<Item Name="Communication" Type="Folder" URL="../Communication">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="Dialog" Type="Folder">
-			<Item Name="ErrorDialog.vi" Type="VI" URL="../Dialog/ErrorDialog.vi"/>
-			<Item Name="ReconnectDialog.vi" Type="VI" URL="../Dialog/ReconnectDialog.vi"/>
+		<Item Name="Dialog" Type="Folder" URL="../Dialog">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="Icon" Type="Folder">
-			<Item Name="AeroQuad Icon.icns" Type="Document" URL="../Icon/AeroQuad Icon.icns"/>
-			<Item Name="AeroQuad_310x140.png" Type="Document" URL="../Icon/AeroQuad_310x140.png"/>
-			<Item Name="AeroQuad_1024x500.png" Type="Document" URL="../Icon/AeroQuad_1024x500.png"/>
-			<Item Name="AeroQuadIcon.icns" Type="Document" URL="../Icon/AeroQuadIcon.icns"/>
-			<Item Name="AeroQuadMacIcon.ico" Type="Document" URL="../Icon/AeroQuadMacIcon.ico"/>
+		<Item Name="Icon" Type="Folder" URL="../Icon">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="Support" Type="Folder">
 			<Item Name="SubPanel" Type="Folder">
@@ -374,7 +369,7 @@
 				<Property Name="INST_defaultDir" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
 				<Property Name="INST_includeError" Type="Bool">false</Property>
 				<Property Name="INST_productName" Type="Str">AeroQuad Configurator</Property>
-				<Property Name="INST_productVersion" Type="Str">3.0.25</Property>
+				<Property Name="INST_productVersion" Type="Str">3.0.26</Property>
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
 				<Property Name="InstSpecVersion" Type="Str">10018002</Property>
 				<Property Name="MSI_arpCompany" Type="Str">Carancho Engineering LLC</Property>
@@ -468,7 +463,7 @@
 				<Property Name="INST_defaultDir" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
 				<Property Name="INST_includeError" Type="Bool">false</Property>
 				<Property Name="INST_productName" Type="Str">AeroQuad Configurator</Property>
-				<Property Name="INST_productVersion" Type="Str">3.0.36</Property>
+				<Property Name="INST_productVersion" Type="Str">3.0.37</Property>
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
 				<Property Name="InstSpecVersion" Type="Str">10018002</Property>
 				<Property Name="MSI_arpCompany" Type="Str">Carancho Engineering LLC</Property>
