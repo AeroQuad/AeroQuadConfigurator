@@ -215,7 +215,6 @@
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="AeroQuadConfigurator.rtm" Type="Document" URL="../AeroQuadConfigurator.rtm"/>
-			<Item Name="ConvertCmd2TlmArguments.vi" Type="VI" URL="//vmware-host/Shared Folders/Ted On My Mac/GitHub/Configurator/Source/Utilities/ConvertCmd2TlmArguments.vi"/>
 			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
