@@ -54,6 +54,68 @@ AVR_TOOLS_PATH = $(INSTALL_DIR)/hardware/tools/avr/bin
 AVRDUDE_PATH = $(INSTALL_DIR)/hardware/tools/avr/bin
 AQ_LIB = $(AQ)/Libraries
 
+ifeq ($(MCU), atmega328p)
+	VARIANTS = $(INSTALL_DIR)/hardware/arduino/variants/standard
+	AVRDUDE_PROGRAMMER = arduino
+else
+	VARIANTS = $(INSTALL_DIR)/hardware/arduino/variants/mega
+	AVRDUDE_PROGRAMMER = stk500v2
+endif	
+
+AQ_INCS = \
+ -I$(AQ)/AeroQuad \
+ -I$(AQ_LIB) \
+ -I$(AQ_LIB)/AQ_Accelerometer \
+ -I$(AQ_LIB)/AQ_BarometricSensor \
+ -I$(AQ_LIB)/AQ_BatteryMonitor \
+ -I$(AQ_LIB)/AQ_CameraStabilizer \
+ -I$(AQ_LIB)/AQ_Compass \
+ -I$(AQ_LIB)/AQ_Defines \
+ -I$(AQ_LIB)/AQ_FlightControlProcessor \
+ -I$(AQ_LIB)/AQ_Gps \
+ -I$(AQ_LIB)/AQ_Gyroscope \
+ -I$(AQ_LIB)/AQ_I2C \
+ -I$(AQ_LIB)/AQ_Kinematics \
+ -I$(AQ_LIB)/AQ_Math \
+ -I$(AQ_LIB)/AQ_Motors \
+ -I$(AQ_LIB)/AQ_OSD \
+ -I$(AQ_LIB)/AQ_Platform_APM \
+ -I$(AQ_LIB)/AQ_Platform_CHR6DM \
+ -I$(AQ_LIB)/AQ_Platform_Wii \
+ -I$(AQ_LIB)/AQ_RangeFinder \
+ -I$(AQ_LIB)/AQ_Receiver \
+ -I$(AQ_LIB)/AQ_SPI
+
+AQ_EXAMPLE_INCS = \
+ -I$(AQ_LIB)/AQ_Accelerometer/Examples \
+ -I$(AQ_LIB)/AQ_Accelerometer/Examples/Test_ADXL345 \
+ -I$(AQ_LIB)/AQ_Accelerometer/Examples/Test_ADXL500 \
+ -I$(AQ_LIB)/AQ_Accelerometer/Examples/Test_APM \
+ -I$(AQ_LIB)/AQ_Accelerometer/Examples/Test_BMA180 \
+ -I$(AQ_LIB)/AQ_Accelerometer/Examples/Test_WII \
+ -I$(AQ_LIB)/AQ_BarometricSensor/Examples \
+ -I$(AQ_LIB)/AQ_BarometricSensor/Examples/Test_BMP085 \
+ -I$(AQ_LIB)/AQ_Compass/Examples \
+ -I$(AQ_LIB)/AQ_Compass/Examples/Test_HMC5843 \
+ -I$(AQ_LIB)/AQ_Gps/Examples \
+ -I$(AQ_LIB)/AQ_Gps/Examples/static_test \
+ -I$(AQ_LIB)/AQ_Gps/Examples/test_with_gps_device \
+ -I$(AQ_LIB)/AQ_Gyroscope/Examples \
+ -I$(AQ_LIB)/AQ_Gyroscope/Examples/Test_APM \
+ -I$(AQ_LIB)/AQ_Gyroscope/Examples/Test_CHR6DM \
+ -I$(AQ_LIB)/AQ_Gyroscope/Examples/Test_IDG_IDZ500 \
+ -I$(AQ_LIB)/AQ_Gyroscope/Examples/Test_ITG3200 \
+ -I$(AQ_LIB)/AQ_Gyroscope/Examples/Test_WII \
+ -I$(AQ_LIB)/AQ_Motors/Examples \
+ -I$(AQ_LIB)/AQ_Motors/Examples/MotorTest \
+ -I$(AQ_LIB)/AQ_RangeFinder/Examples \
+ -I$(AQ_LIB)/AQ_RangeFinder/Examples/Test_MaxSonarRangeFinder \
+ -I$(AQ_LIB)/AQ_Receiver/Examples \
+ -I$(AQ_LIB)/AQ_Receiver/Examples/Test_328p \
+ -I$(AQ_LIB)/AQ_Receiver/Examples/Test_APM \
+ -I$(AQ_LIB)/AQ_Receiver/Examples/Test_MEGA
+
+
 #Note that if your program has dependencies other than those
 #already listed below, you will need to add them accordingly.
 C_MODULES =  \
@@ -140,6 +202,10 @@ AVRDUDE_FLAGS = -V -F -C $(INSTALL_DIR)/hardware/tools/avr/etc/avrdude.conf \
 -p $(MCU) -P $(AVRDUDE_PORT) -c $(AVRDUDE_PROGRAMMER) \
 -b $(UPLOAD_RATE) -D 
 
+AVRDUDE_UNO_FLAGS = -V -F -C $(INSTALL_DIR)/hardware/tools/avr/etc/avrdude.conf \
+-p $(MCU) -P $(AVRDUDE_PORT) -c arduino \
+-b $(UPLOAD_RATE) -D 
+
 # Program settings
 CC = $(AVR_TOOLS_PATH)/avr-gcc
 CXX = $(AVR_TOOLS_PATH)/avr-g++
@@ -190,12 +256,12 @@ sym: applet/main.sym
 
 # Program the device.
 upload: applet/main.hex
-	$(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH)
+	@-$(AVRDUDE) $(AVRDUDE_UNO_FLAGS) $(AVRDUDE_WRITE_FLASH) || $(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH)	
+	@echo
 	@echo "If upload was successful, select Done and the Configurator"
 	@echo "will automatically connect to the AeroQuad. Otherwise,"
 	@echo "verify correct selections were made and retry upload."
 	@echo
-#	@echo "Press [enter] to continue."
 
 # Display size of file.
 HEXSIZE = $(SIZE) --target=$(FORMAT) applet/main.hex
