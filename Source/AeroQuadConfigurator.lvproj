@@ -10,14 +10,19 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="Communication" Type="Folder" URL="../Communication">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
+		<Item Name="Communication" Type="Folder">
+			<Item Name="Communication.lvclass" Type="LVClass" URL="../Communication/Communication.lvclass"/>
 		</Item>
-		<Item Name="Dialog" Type="Folder" URL="../Dialog">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
+		<Item Name="Dialog" Type="Folder">
+			<Item Name="ErrorDialog.vi" Type="VI" URL="../Dialog/ErrorDialog.vi"/>
+			<Item Name="ReconnectDialog.vi" Type="VI" URL="../Dialog/ReconnectDialog.vi"/>
 		</Item>
-		<Item Name="Icon" Type="Folder" URL="../Icon">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
+		<Item Name="Icon" Type="Folder">
+			<Item Name="AeroQuad Icon.icns" Type="Document" URL="../Icon/AeroQuad Icon.icns"/>
+			<Item Name="AeroQuad_310x140.png" Type="Document" URL="../Icon/AeroQuad_310x140.png"/>
+			<Item Name="AeroQuad_1024x500.png" Type="Document" URL="../Icon/AeroQuad_1024x500.png"/>
+			<Item Name="AeroQuadIcon.icns" Type="Document" URL="../Icon/AeroQuadIcon.icns"/>
+			<Item Name="AeroQuadMacIcon.ico" Type="Document" URL="../Icon/AeroQuadMacIcon.ico"/>
 		</Item>
 		<Item Name="Support" Type="Folder">
 			<Item Name="SubPanel" Type="Folder">
@@ -68,8 +73,127 @@
 				</Item>
 			</Item>
 		</Item>
-		<Item Name="Utilities" Type="Folder" URL="../Utilities">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
+		<Item Name="Utilities" Type="Folder">
+			<Item Name="ArtificialHorizon" Type="Folder">
+				<Item Name="Pictures" Type="Folder">
+					<Item Name="AH.jpg" Type="Document" URL="../Utilities/ArtificialHorizon/Pictures/AH.jpg"/>
+					<Item Name="Dial.png" Type="Document" URL="../Utilities/ArtificialHorizon/Pictures/Dial.png"/>
+					<Item Name="FixedHorizonTrans.png" Type="Document" URL="../Utilities/ArtificialHorizon/Pictures/FixedHorizonTrans.png"/>
+				</Item>
+				<Item Name="DialCreate.vi" Type="VI" URL="../Utilities/ArtificialHorizon/DialCreate.vi"/>
+				<Item Name="GenCylinder.vi" Type="VI" URL="../Utilities/ArtificialHorizon/GenCylinder.vi"/>
+				<Item Name="PitchCalc.vi" Type="VI" URL="../Utilities/ArtificialHorizon/PitchCalc.vi"/>
+				<Item Name="RollCalc.vi" Type="VI" URL="../Utilities/ArtificialHorizon/RollCalc.vi"/>
+				<Item Name="ViewWindowCreate.vi" Type="VI" URL="../Utilities/ArtificialHorizon/ViewWindowCreate.vi"/>
+			</Item>
+			<Item Name="State" Type="Folder">
+				<Item Name="CloseState.vi" Type="VI" URL="../Utilities/State/CloseState.vi"/>
+				<Item Name="FlushState.vi" Type="VI" URL="../Utilities/State/FlushState.vi"/>
+				<Item Name="InitState.vi" Type="VI" URL="../Utilities/State/InitState.vi"/>
+				<Item Name="NextGUIState.vi" Type="VI" URL="../Utilities/State/NextGUIState.vi"/>
+				<Item Name="NextState.vi" Type="VI" URL="../Utilities/State/NextState.vi"/>
+				<Item Name="NextStates.vi" Type="VI" URL="../Utilities/State/NextStates.vi"/>
+				<Item Name="PriorityState.vi" Type="VI" URL="../Utilities/State/PriorityState.vi"/>
+				<Item Name="ReadState.vi" Type="VI" URL="../Utilities/State/ReadState.vi"/>
+			</Item>
+			<Item Name="TDMS" Type="Folder">
+				<Item Name="_G TDMS 8x.llb" Type="Folder">
+					<Item Name="G TDMS 1D Meta Data.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS 1D Meta Data.vi"/>
+					<Item Name="G TDMS 2D Meta Data.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS 2D Meta Data.vi"/>
+					<Item Name="G TDMS 2D String Meta Data.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS 2D String Meta Data.vi"/>
+					<Item Name="G TDMS Channel Check.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Channel Check.vi"/>
+					<Item Name="G TDMS Channel Names.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Channel Names.vi"/>
+					<Item Name="G TDMS Close.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Close.vi"/>
+					<Item Name="G TDMS Convert Data.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Convert Data.vi"/>
+					<Item Name="G TDMS Dgtl Line.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Dgtl Line.vi"/>
+					<Item Name="G TDMS Dgtl Meta Data.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Dgtl Meta Data.vi"/>
+					<Item Name="G TDMS Dgtl Waveform Info.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Dgtl Waveform Info.vi"/>
+					<Item Name="G TDMS Dgtl Wfrm Meta Data.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Dgtl Wfrm Meta Data.vi"/>
+					<Item Name="G TDMS DIAdem Dgtl Properties.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS DIAdem Dgtl Properties.vi"/>
+					<Item Name="G TDMS DIAdem Properties.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS DIAdem Properties.vi"/>
+					<Item Name="G TDMS Flat String.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Flat String.vi"/>
+					<Item Name="G TDMS Get Info.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Get Info.vi"/>
+					<Item Name="G TDMS Group Name.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Group Name.vi"/>
+					<Item Name="G TDMS Index.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Index.vi"/>
+					<Item Name="G TDMS Open.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Open.vi"/>
+					<Item Name="G TDMS Path.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Path.vi"/>
+					<Item Name="G TDMS Properties Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Properties Array.vi"/>
+					<Item Name="G TDMS Property.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Property.vi"/>
+					<Item Name="G TDMS Segment.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Segment.vi"/>
+					<Item Name="G TDMS Set Properties.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Set Properties.vi"/>
+					<Item Name="G TDMS Single Channel Names.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Single Channel Names.vi"/>
+					<Item Name="G TDMS String Index.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS String Index.vi"/>
+					<Item Name="G TDMS String Offsets 1D.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS String Offsets 1D.vi"/>
+					<Item Name="G TDMS Waveform Info.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Waveform Info.vi"/>
+					<Item Name="G TDMS Wfrm Meta Data 2D.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Wfrm Meta Data 2D.vi"/>
+					<Item Name="G TDMS Wfrm Meta Data.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Wfrm Meta Data.vi"/>
+					<Item Name="G TDMS Write 2D Array of Strings.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write 2D Array of Strings.vi"/>
+					<Item Name="G TDMS Write 2D Bool Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write 2D Bool Array.vi"/>
+					<Item Name="G TDMS Write Array of Strings.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write Array of Strings.vi"/>
+					<Item Name="G TDMS Write Array of Waveform.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write Array of Waveform.vi"/>
+					<Item Name="G TDMS Write Bool Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write Bool Array.vi"/>
+					<Item Name="G TDMS Write DBL 2D Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write DBL 2D Array.vi"/>
+					<Item Name="G TDMS Write DBL Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write DBL Array.vi"/>
+					<Item Name="G TDMS Write Dgtl Data.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write Dgtl Data.vi"/>
+					<Item Name="G TDMS Write Dgtl Waveform.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write Dgtl Waveform.vi"/>
+					<Item Name="G TDMS Write I8 2D Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write I8 2D Array.vi"/>
+					<Item Name="G TDMS Write I8 Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write I8 Array.vi"/>
+					<Item Name="G TDMS Write I16 2D Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write I16 2D Array.vi"/>
+					<Item Name="G TDMS Write I16 Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write I16 Array.vi"/>
+					<Item Name="G TDMS Write I32 2D Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write I32 2D Array.vi"/>
+					<Item Name="G TDMS Write I32 Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write I32 Array.vi"/>
+					<Item Name="G TDMS Write I64 2D Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write I64 2D Array.vi"/>
+					<Item Name="G TDMS Write I64 Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write I64 Array.vi"/>
+					<Item Name="G TDMS Write SGL 2D Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write SGL 2D Array.vi"/>
+					<Item Name="G TDMS Write SGL Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write SGL Array.vi"/>
+					<Item Name="G TDMS Write U8 2D Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write U8 2D Array.vi"/>
+					<Item Name="G TDMS Write U8 Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write U8 Array.vi"/>
+					<Item Name="G TDMS Write U16 2D Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write U16 2D Array.vi"/>
+					<Item Name="G TDMS Write U16 Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write U16 Array.vi"/>
+					<Item Name="G TDMS Write U32 2D Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write U32 2D Array.vi"/>
+					<Item Name="G TDMS Write U32 Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write U32 Array.vi"/>
+					<Item Name="G TDMS Write U64 2D Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write U64 2D Array.vi"/>
+					<Item Name="G TDMS Write U64 Array.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write U64 Array.vi"/>
+					<Item Name="G TDMS Write Waveform.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write Waveform.vi"/>
+					<Item Name="G TDMS Write.vi" Type="VI" URL="../Utilities/TDMS/_G TDMS 8x.llb/G TDMS Write.vi"/>
+				</Item>
+				<Item Name="G TDMS 8x.mnu" Type="Document" URL="../Utilities/TDMS/G TDMS 8x.mnu"/>
+			</Item>
+			<Item Name="Uploader" Type="Folder">
+				<Item Name="AeroQuadUploader.ini" Type="Document" URL="../Utilities/Uploader/AeroQuadUploader.ini"/>
+				<Item Name="AeroQuadUploader.vi" Type="VI" URL="../Utilities/Uploader/AeroQuadUploader.vi"/>
+				<Item Name="AutoRenameFile.vi" Type="VI" URL="../Utilities/Uploader/AutoRenameFile.vi"/>
+				<Item Name="config.mk" Type="Document" URL="../Utilities/Uploader/config.mk"/>
+				<Item Name="ConvertMac2UnixFiles.vi" Type="VI" URL="../Utilities/Uploader/ConvertMac2UnixFiles.vi"/>
+				<Item Name="CopySourceFiles.vi" Type="VI" URL="../Utilities/Uploader/CopySourceFiles.vi"/>
+				<Item Name="DebugDOS.vi" Type="VI" URL="../Utilities/Uploader/DebugDOS.vi"/>
+				<Item Name="GenerateTemporaryPath.vi" Type="VI" URL="../Utilities/Uploader/GenerateTemporaryPath.vi"/>
+				<Item Name="GetShortPathName.vi" Type="VI" URL="../Utilities/Uploader/GetShortPathName.vi"/>
+				<Item Name="ListLibraryFolders.vi" Type="VI" URL="../Utilities/Uploader/ListLibraryFolders.vi"/>
+				<Item Name="Makefile" Type="Document" URL="../Utilities/Uploader/Makefile"/>
+				<Item Name="RunAppleScriptCode.vi" Type="VI" URL="../Utilities/Uploader/RunAppleScriptCode.vi"/>
+				<Item Name="Settings.vi" Type="VI" URL="../Utilities/Uploader/Settings.vi"/>
+				<Item Name="Upload.vi" Type="VI" URL="../Utilities/Uploader/Upload.vi"/>
+				<Item Name="VerifyUploadDialog.vi" Type="VI" URL="../Utilities/Uploader/VerifyUploadDialog.vi"/>
+			</Item>
+			<Item Name="ConvertCmd2TlmArguments.vi" Type="VI" URL="../Utilities/ConvertCmd2TlmArguments.vi"/>
+			<Item Name="ConvertNumericString.vi" Type="VI" URL="../Utilities/ConvertNumericString.vi"/>
+			<Item Name="DecodeSensorBytes.vi" Type="VI" URL="../Utilities/DecodeSensorBytes.vi"/>
+			<Item Name="FindStartWord.vi" Type="VI" URL="../Utilities/FindStartWord.vi"/>
+			<Item Name="FindUserAppFolder.vi" Type="VI" URL="../Utilities/FindUserAppFolder.vi"/>
+			<Item Name="FixMacPath.vi" Type="VI" URL="../Utilities/FixMacPath.vi"/>
+			<Item Name="GenerateTransmitterCal.vi" Type="VI" URL="../Utilities/GenerateTransmitterCal.vi"/>
+			<Item Name="GetSectionData.vi" Type="VI" URL="../Utilities/GetSectionData.vi"/>
+			<Item Name="LookupCommands.vi" Type="VI" URL="../Utilities/LookupCommands.vi"/>
+			<Item Name="Mac2LinuxPath.vi" Type="VI" URL="../Utilities/Mac2LinuxPath.vi"/>
+			<Item Name="RemoveTrailingComma.vi" Type="VI" URL="../Utilities/RemoveTrailingComma.vi"/>
+			<Item Name="TDMS - AeroQuad File Viewer.vi" Type="VI" URL="../Utilities/TDMS - AeroQuad File Viewer.vi"/>
+			<Item Name="TestUsbSerialPort.vi" Type="VI" URL="../Utilities/TestUsbSerialPort.vi"/>
+			<Item Name="VerifyData.vi" Type="VI" URL="../Utilities/VerifyData.vi"/>
+			<Item Name="VerifyStartBytes.vi" Type="VI" URL="../Utilities/VerifyStartBytes.vi"/>
+			<Item Name="VerifyStartStopBytes.vi" Type="VI" URL="../Utilities/VerifyStartStopBytes.vi"/>
+			<Item Name="VerifyStopBytes.vi" Type="VI" URL="../Utilities/VerifyStopBytes.vi"/>
+			<Item Name="WriteEEPROM.vi" Type="VI" URL="../Utilities/WriteEEPROM.vi"/>
 		</Item>
 		<Item Name="AeroQuadConfigurator.ini" Type="Document" URL="../AeroQuadConfigurator.ini"/>
 		<Item Name="AeroQuadConfigurator.vi" Type="VI" URL="../AeroQuadConfigurator.vi"/>
@@ -219,7 +343,6 @@
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="lvanlys.dll" Type="Document" URL="/C/Program Files/National Instruments/LabVIEW 2010/resource/lvanlys.dll"/>
-			<Item Name="visarc" Type="Document" URL="/C/Program Files/National Instruments/LabVIEW 2010/resource/visarc"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="Application" Type="EXE">
@@ -464,7 +587,7 @@
 				<Property Name="INST_defaultDir" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
 				<Property Name="INST_includeError" Type="Bool">false</Property>
 				<Property Name="INST_productName" Type="Str">AeroQuad Configurator</Property>
-				<Property Name="INST_productVersion" Type="Str">3.0.38</Property>
+				<Property Name="INST_productVersion" Type="Str">3.0.45</Property>
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
 				<Property Name="InstSpecVersion" Type="Str">10018002</Property>
 				<Property Name="MSI_arpCompany" Type="Str">Carancho Engineering LLC</Property>
