@@ -56,10 +56,12 @@ AQ_LIB = $(AQ)/Libraries
 
 ifeq ($(MCU), atmega328p)
 	VARIANTS = $(INSTALL_DIR)/hardware/arduino/variants/standard
-	AVRDUDE_PROGRAMMER = arduino
+	AVRDUDE_PROGRAMMER = wiring
+	#AVRDUDE_PROGRAMMER = arduino
 else
 	VARIANTS = $(INSTALL_DIR)/hardware/arduino/variants/mega
-	AVRDUDE_PROGRAMMER = stk500v2
+	AVRDUDE_PROGRAMMER = wiring
+	#AVRDUDE_PROGRAMMER = stk500v2
 endif	
 
 AQ_INCS = \
@@ -202,10 +204,6 @@ AVRDUDE_FLAGS = -V -F -C $(INSTALL_DIR)/hardware/tools/avr/etc/avrdude.conf \
 -p $(MCU) -P $(AVRDUDE_PORT) -c $(AVRDUDE_PROGRAMMER) \
 -b $(UPLOAD_RATE) -D 
 
-AVRDUDE_UNO_FLAGS = -V -F -C $(INSTALL_DIR)/hardware/tools/avr/etc/avrdude.conf \
--p $(MCU) -P $(AVRDUDE_PORT) -c arduino \
--b $(UPLOAD_RATE) -D 
-
 # Program settings
 CC = $(AVR_TOOLS_PATH)/avr-gcc
 CXX = $(AVR_TOOLS_PATH)/avr-g++
@@ -256,7 +254,7 @@ sym: applet/main.sym
 
 # Program the device.
 upload: applet/main.hex
-	@-$(AVRDUDE) $(AVRDUDE_UNO_FLAGS) $(AVRDUDE_WRITE_FLASH) || $(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH)	
+	@-$(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH) || $(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH)	
 	@echo
 	@echo "If upload was successful, select Done and the Configurator"
 	@echo "will automatically connect to the AeroQuad. Otherwise,"
