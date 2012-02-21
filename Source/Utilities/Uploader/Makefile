@@ -56,8 +56,7 @@ AQ_LIB = $(AQ)/Libraries
 
 ifeq ($(MCU), atmega328p)
 	VARIANTS = $(INSTALL_DIR)/hardware/arduino/variants/standard
-	AVRDUDE_PROGRAMMER = wiring
-	#AVRDUDE_PROGRAMMER = arduino
+	AVRDUDE_PROGRAMMER = arduino
 else
 	VARIANTS = $(INSTALL_DIR)/hardware/arduino/variants/mega
 	AVRDUDE_PROGRAMMER = wiring
