@@ -47,7 +47,6 @@
 				<Item Name="Map" Type="Folder">
 					<Item Name="AeroQuad.cfg" Type="Document" URL="../Support/SubPanel/Map/AeroQuad.cfg"/>
 					<Item Name="Map.vi" Type="VI" URL="../Support/SubPanel/Map/Map.vi"/>
-					<Item Name="Map2.vi" Type="VI" URL="../Support/SubPanel/Map/Map2.vi"/>
 				</Item>
 				<Item Name="Model" Type="Folder">
 					<Item Name="Hex +.stl" Type="Document" URL="../Support/SubPanel/Model/Hex +.stl"/>
