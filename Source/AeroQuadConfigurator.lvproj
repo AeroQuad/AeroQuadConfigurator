@@ -180,10 +180,10 @@
 				<Item Name="VerifyUploadDialog.vi" Type="VI" URL="../Utilities/Uploader/VerifyUploadDialog.vi"/>
 			</Item>
 			<Item Name="ConvertCmd2TlmArguments.vi" Type="VI" URL="../Utilities/ConvertCmd2TlmArguments.vi"/>
-			<Item Name="ConvertDD2DMS.vi" Type="VI" URL="//vmware-host/Shared Folders/Ted On My Mac/GitHub/Configurator/Source/Utilities/ConvertDD2DMS.vi"/>
-			<Item Name="ConvertDMS2DD.vi" Type="VI" URL="//vmware-host/Shared Folders/Ted On My Mac/GitHub/Configurator/Source/Utilities/ConvertDMS2DD.vi"/>
+			<Item Name="ConvertDD2DMS.vi" Type="VI" URL="../Utilities/ConvertDD2DMS.vi"/>
+			<Item Name="ConvertDMS2DD.vi" Type="VI" URL="../Utilities/ConvertDMS2DD.vi"/>
 			<Item Name="ConvertNumericString.vi" Type="VI" URL="../Utilities/ConvertNumericString.vi"/>
-			<Item Name="CreateWaypoint.vi" Type="VI" URL="//vmware-host/Shared Folders/Ted On My Mac/GitHub/Configurator/Source/Utilities/CreateWaypoint.vi"/>
+			<Item Name="CreateWaypoint.vi" Type="VI" URL="../Utilities/CreateWaypoint.vi"/>
 			<Item Name="DecodeSensorBytes.vi" Type="VI" URL="../Utilities/DecodeSensorBytes.vi"/>
 			<Item Name="FindStartWord.vi" Type="VI" URL="../Utilities/FindStartWord.vi"/>
 			<Item Name="FindUserAppFolder.vi" Type="VI" URL="../Utilities/FindUserAppFolder.vi"/>
@@ -199,7 +199,9 @@
 			<Item Name="VerifyStartBytes.vi" Type="VI" URL="../Utilities/VerifyStartBytes.vi"/>
 			<Item Name="VerifyStartStopBytes.vi" Type="VI" URL="../Utilities/VerifyStartStopBytes.vi"/>
 			<Item Name="VerifyStopBytes.vi" Type="VI" URL="../Utilities/VerifyStopBytes.vi"/>
-			<Item Name="Waypoint.ctl" Type="VI" URL="//vmware-host/Shared Folders/Ted On My Mac/GitHub/Configurator/Source/Utilities/Waypoint.ctl"/>
+			<Item Name="WaitForBrowser.vi" Type="VI" URL="../Utilities/WaitForBrowser.vi"/>
+			<Item Name="WaitForMapUpdate.vi" Type="VI" URL="../Utilities/WaitForMapUpdate.vi"/>
+			<Item Name="Waypoint.ctl" Type="VI" URL="../Utilities/Waypoint.ctl"/>
 			<Item Name="WriteEEPROM.vi" Type="VI" URL="../Utilities/WriteEEPROM.vi"/>
 		</Item>
 		<Item Name="AeroQuadConfigurator.ini" Type="Document" URL="../AeroQuadConfigurator.ini"/>
