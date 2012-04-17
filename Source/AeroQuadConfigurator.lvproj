@@ -89,6 +89,15 @@
 				<Item Name="RollCalc.vi" Type="VI" URL="../Utilities/ArtificialHorizon/RollCalc.vi"/>
 				<Item Name="ViewWindowCreate.vi" Type="VI" URL="../Utilities/ArtificialHorizon/ViewWindowCreate.vi"/>
 			</Item>
+			<Item Name="RScode" Type="Folder">
+				<Item Name="CheckAQHeader.vi" Type="VI" URL="../Utilities/RScode/CheckAQHeader.vi"/>
+				<Item Name="CorrectErrors.vi" Type="VI" URL="../Utilities/RScode/CorrectErrors.vi"/>
+				<Item Name="DecodeData.vi" Type="VI" URL="../Utilities/RScode/DecodeData.vi"/>
+				<Item Name="EncodeData.vi" Type="VI" URL="../Utilities/RScode/EncodeData.vi"/>
+				<Item Name="InitializeECC.vi" Type="VI" URL="../Utilities/RScode/InitializeECC.vi"/>
+				<Item Name="RScode.dll" Type="Document" URL="../Utilities/RScode/RScode.dll"/>
+				<Item Name="TestErrorCorrection.vi" Type="VI" URL="../Utilities/RScode/TestErrorCorrection.vi"/>
+			</Item>
 			<Item Name="State" Type="Folder">
 				<Item Name="CloseState.vi" Type="VI" URL="../Utilities/State/CloseState.vi"/>
 				<Item Name="FlushState.vi" Type="VI" URL="../Utilities/State/FlushState.vi"/>
@@ -192,6 +201,8 @@
 			<Item Name="GetSectionData.vi" Type="VI" URL="../Utilities/GetSectionData.vi"/>
 			<Item Name="LookupCommands.vi" Type="VI" URL="../Utilities/LookupCommands.vi"/>
 			<Item Name="Mac2LinuxPath.vi" Type="VI" URL="../Utilities/Mac2LinuxPath.vi"/>
+			<Item Name="ModemTelemetryDecode.vi" Type="VI" URL="../Utilities/ModemTelemetryDecode.vi"/>
+			<Item Name="ModemTelemetryPacket.ctl" Type="VI" URL="../Utilities/ModemTelemetryPacket.ctl"/>
 			<Item Name="RemoveTrailingComma.vi" Type="VI" URL="../Utilities/RemoveTrailingComma.vi"/>
 			<Item Name="TDMS - AeroQuad File Viewer.vi" Type="VI" URL="../Utilities/TDMS - AeroQuad File Viewer.vi"/>
 			<Item Name="TestUsbSerialPort.vi" Type="VI" URL="../Utilities/TestUsbSerialPort.vi"/>
@@ -495,23 +506,8 @@
 				<Property Name="Destination[0].type" Type="Str">userFolder</Property>
 				<Property Name="DestinationCount" Type="Int">1</Property>
 				<Property Name="DistPart[0].flavorID" Type="Str">DefaultFull</Property>
-				<Property Name="DistPart[0].productID" Type="Str">{4C1F4C94-7160-4A79-8BE3-4BACCFDE93DF}</Property>
+				<Property Name="DistPart[0].productID" Type="Str">{1478F207-677B-443B-B305-E924A6289F1B}</Property>
 				<Property Name="DistPart[0].productName" Type="Str">NI LabVIEW Run-Time Engine 2010 SP1</Property>
-				<Property Name="DistPart[0].SoftDep[0].dependencyKey" Type="Str">CKBAAA.9EF852AB_A55D_40BB_9800_F82E90432A9E</Property>
-				<Property Name="DistPart[0].SoftDep[0].productName" Type="Str">NI System Web Server 1.1</Property>
-				<Property Name="DistPart[0].SoftDep[1].dependencyKey" Type="Str">EKBAAA.9EF852AB_A55D_40BB_9800_F82E90432A9E</Property>
-				<Property Name="DistPart[0].SoftDep[1].productName" Type="Str">NI_Logos_5.2.1</Property>
-				<Property Name="DistPart[0].SoftDep[2].dependencyKey" Type="Str">FKBAAA.9EF852AB_A55D_40BB_9800_F82E90432A9E</Property>
-				<Property Name="DistPart[0].SoftDep[2].productName" Type="Str">NI TDM Streaming 2.2</Property>
-				<Property Name="DistPart[0].SoftDep[3].dependencyKey" Type="Str">GKBAAA.9EF852AB_A55D_40BB_9800_F82E90432A9E</Property>
-				<Property Name="DistPart[0].SoftDep[3].productName" Type="Str">NI LabVIEW 2010 Run-Time Engine Web Server</Property>
-				<Property Name="DistPart[0].SoftDep[4].dependencyKey" Type="Str">HKBAAA.9EF852AB_A55D_40BB_9800_F82E90432A9E</Property>
-				<Property Name="DistPart[0].SoftDep[4].productName" Type="Str">NI LabVIEW 2010 Real-Time NBFifo</Property>
-				<Property Name="DistPart[0].SoftDep[5].dependencyKey" Type="Str">JKBAAA.9EF852AB_A55D_40BB_9800_F82E90432A9E</Property>
-				<Property Name="DistPart[0].SoftDep[5].productName" Type="Str">NI SSL Support</Property>
-				<Property Name="DistPart[0].SoftDep[6].dependencyKey" Type="Str">KKBAAA.9EF852AB_A55D_40BB_9800_F82E90432A9E</Property>
-				<Property Name="DistPart[0].SoftDep[6].productName" Type="Str">NI Web Application Server 1.1</Property>
-				<Property Name="DistPart[0].SoftDepCount" Type="Int">7</Property>
 				<Property Name="DistPart[0].upgradeCode" Type="Str">{9F6EADB1-707C-41AF-8F3D-FB856FA8BD1C}</Property>
 				<Property Name="DistPart[1].flavorID" Type="Str">_deployment_</Property>
 				<Property Name="DistPart[1].productID" Type="Str">{85BA3FCF-AA00-4151-B97D-84A221E8198A}</Property>
@@ -526,7 +522,7 @@
 				<Property Name="INST_defaultDir" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
 				<Property Name="INST_includeError" Type="Bool">false</Property>
 				<Property Name="INST_productName" Type="Str">AeroQuad Configurator</Property>
-				<Property Name="INST_productVersion" Type="Str">3.0.33</Property>
+				<Property Name="INST_productVersion" Type="Str">3.0.34</Property>
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
 				<Property Name="InstSpecVersion" Type="Str">10018002</Property>
 				<Property Name="MSI_arpCompany" Type="Str">Carancho Engineering LLC</Property>
