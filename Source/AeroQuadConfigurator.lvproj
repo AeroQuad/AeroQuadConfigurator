@@ -89,6 +89,11 @@
 				<Item Name="RollCalc.vi" Type="VI" URL="../Utilities/ArtificialHorizon/RollCalc.vi"/>
 				<Item Name="ViewWindowCreate.vi" Type="VI" URL="../Utilities/ArtificialHorizon/ViewWindowCreate.vi"/>
 			</Item>
+			<Item Name="Modem" Type="Folder">
+				<Item Name="ModemTelemetryDecode.vi" Type="VI" URL="../Utilities/ModemTelemetryDecode.vi"/>
+				<Item Name="ModemTelemetryPacket.ctl" Type="VI" URL="../Utilities/ModemTelemetryPacket.ctl"/>
+				<Item Name="ModemTelemetryParser.vi" Type="VI" URL="../Utilities/ModemTelemetryParser.vi"/>
+			</Item>
 			<Item Name="RScode" Type="Folder">
 				<Item Name="CheckAQHeader.vi" Type="VI" URL="../Utilities/RScode/CheckAQHeader.vi"/>
 				<Item Name="CorrectErrors.vi" Type="VI" URL="../Utilities/RScode/CorrectErrors.vi"/>
@@ -201,8 +206,6 @@
 			<Item Name="GetSectionData.vi" Type="VI" URL="../Utilities/GetSectionData.vi"/>
 			<Item Name="LookupCommands.vi" Type="VI" URL="../Utilities/LookupCommands.vi"/>
 			<Item Name="Mac2LinuxPath.vi" Type="VI" URL="../Utilities/Mac2LinuxPath.vi"/>
-			<Item Name="ModemTelemetryDecode.vi" Type="VI" URL="../Utilities/ModemTelemetryDecode.vi"/>
-			<Item Name="ModemTelemetryPacket.ctl" Type="VI" URL="../Utilities/ModemTelemetryPacket.ctl"/>
 			<Item Name="RemoveTrailingComma.vi" Type="VI" URL="../Utilities/RemoveTrailingComma.vi"/>
 			<Item Name="TDMS - AeroQuad File Viewer.vi" Type="VI" URL="../Utilities/TDMS - AeroQuad File Viewer.vi"/>
 			<Item Name="TestUsbSerialPort.vi" Type="VI" URL="../Utilities/TestUsbSerialPort.vi"/>
