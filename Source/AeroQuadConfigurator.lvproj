@@ -391,6 +391,7 @@
 			<Item Name="nivissvc.dll" Type="Document" URL="nivissvc.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="XDNodeRunTimeDep.lvlib" Type="Library" URL="/&lt;vilib&gt;/Platform/TimedLoop/XDataNode/XDNodeRunTimeDep.lvlib"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="Application" Type="EXE">
@@ -411,7 +412,7 @@
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/Application/Support</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/Icon/AeroQuadMacIcon.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{2A07F85B-D868-43A2-8384-9FA66B570E3C}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{F2E7654F-1E88-40A1-9F7B-37DFD3D057B4}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/AeroQuadConfigurator.vi</Property>
@@ -436,7 +437,9 @@
 				<Property Name="Source[7].destinationIndex" Type="Int">1</Property>
 				<Property Name="Source[7].itemID" Type="Ref">/My Computer/Utilities/Uploader/Makefile</Property>
 				<Property Name="Source[7].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="SourceCount" Type="Int">8</Property>
+				<Property Name="Source[8].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[8].itemID" Type="Ref">/My Computer/Utilities/RScode/msvcr100.dll</Property>
+				<Property Name="SourceCount" Type="Int">9</Property>
 				<Property Name="TgtF_companyName" Type="Str">Carancho Engineering</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">Configuration tool for the AeroQuad MultiCopter</Property>
 				<Property Name="TgtF_fileVersion.build" Type="Int">8</Property>
@@ -526,7 +529,7 @@
 				<Property Name="INST_defaultDir" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
 				<Property Name="INST_includeError" Type="Bool">false</Property>
 				<Property Name="INST_productName" Type="Str">AeroQuad Configurator</Property>
-				<Property Name="INST_productVersion" Type="Str">3.0.39</Property>
+				<Property Name="INST_productVersion" Type="Str">3.0.42</Property>
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
 				<Property Name="InstSpecVersion" Type="Str">10018002</Property>
 				<Property Name="MSI_arpCompany" Type="Str">Carancho Engineering LLC</Property>
@@ -568,10 +571,6 @@
 				<Property Name="Source[0].File[13].name" Type="Str">Tri.stl</Property>
 				<Property Name="Source[0].File[13].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Tri.stl</Property>
 				<Property Name="Source[0].File[13].unlock" Type="Bool">true</Property>
-				<Property Name="Source[0].File[14].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
-				<Property Name="Source[0].File[14].name" Type="Str">RScode.dll</Property>
-				<Property Name="Source[0].File[14].tag" Type="Str">{06543C9F-55AD-4C51-A4FD-79AB7E28B7C9}</Property>
-				<Property Name="Source[0].File[14].unlock" Type="Bool">true</Property>
 				<Property Name="Source[0].File[2].dest" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
 				<Property Name="Source[0].File[2].name" Type="Str">AeroQuadUploader.ini</Property>
 				<Property Name="Source[0].File[2].tag" Type="Ref">/My Computer/Utilities/Uploader/AeroQuadUploader.ini</Property>
@@ -604,44 +603,15 @@
 				<Property Name="Source[0].File[9].name" Type="Str">Octo X8.stl</Property>
 				<Property Name="Source[0].File[9].tag" Type="Ref">/My Computer/Support/SubPanel/Model/Octo X8.stl</Property>
 				<Property Name="Source[0].File[9].unlock" Type="Bool">true</Property>
-				<Property Name="Source[0].FileCount" Type="Int">15</Property>
+				<Property Name="Source[0].FileCount" Type="Int">14</Property>
 				<Property Name="Source[0].name" Type="Str">Application</Property>
 				<Property Name="Source[0].tag" Type="Ref">/My Computer/Build Specifications/Application</Property>
 				<Property Name="Source[0].type" Type="Str">EXE</Property>
-				<Property Name="SourceCount" Type="Int">1</Property>
-			</Item>
-			<Item Name="Test" Type="EXE">
-				<Property Name="App_copyErrors" Type="Bool">true</Property>
-				<Property Name="App_INI_aliasGUID" Type="Str">{0BF8E1E1-8159-4CAC-86E8-A6F8A1D49F94}</Property>
-				<Property Name="App_INI_GUID" Type="Str">{007B9869-F8F4-4213-AD0C-C24905245595}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">Test</Property>
-				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
-				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">../builds/AeroQuadConfigurator/Test</Property>
-				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
-				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Destination[0].destName" Type="Str">test.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/Test/test.exe</Property>
-				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
-				<Property Name="Destination[0].type" Type="Str">App</Property>
-				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/Test/data</Property>
-				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{F2E7654F-1E88-40A1-9F7B-37DFD3D057B4}</Property>
-				<Property Name="Source[0].type" Type="Str">Container</Property>
-				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Support/SubPanel/Map/Map.vi</Property>
-				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
-				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="Source[1].dest" Type="Str">{D2272923-C63E-4A06-9729-85B1AD1CFB2A}</Property>
+				<Property Name="Source[1].name" Type="Str">msvcr100.dll</Property>
+				<Property Name="Source[1].tag" Type="Ref">/My Computer/Utilities/RScode/msvcr100.dll</Property>
+				<Property Name="Source[1].type" Type="Str">File</Property>
 				<Property Name="SourceCount" Type="Int">2</Property>
-				<Property Name="TgtF_companyName" Type="Str">Northrop Grumman</Property>
-				<Property Name="TgtF_fileDescription" Type="Str">Test</Property>
-				<Property Name="TgtF_fileVersion.major" Type="Int">1</Property>
-				<Property Name="TgtF_internalName" Type="Str">Test</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2012 Northrop Grumman</Property>
-				<Property Name="TgtF_productName" Type="Str">Test</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{FF0735C0-1AA5-4917-8C80-A5DD140FBB3A}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">test.exe</Property>
 			</Item>
 			<Item Name="Updater" Type="Installer">
 				<Property Name="Destination[0].name" Type="Str">AeroQuad Configurator</Property>
