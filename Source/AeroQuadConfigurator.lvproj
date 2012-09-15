@@ -195,6 +195,11 @@
 				<Item Name="Upload.vi" Type="VI" URL="../Utilities/Uploader/Upload.vi"/>
 				<Item Name="VerifyUploadDialog.vi" Type="VI" URL="../Utilities/Uploader/VerifyUploadDialog.vi"/>
 			</Item>
+			<Item Name="Uploader32" Type="Folder">
+				<Item Name="AeroQuadUploader32.vi" Type="VI" URL="../Utilities/Uploader32/AeroQuadUploader32.vi"/>
+				<Item Name="DeFUSeUploader.vi" Type="VI" URL="../Utilities/Uploader32/DeFUSeUploader.vi"/>
+				<Item Name="SetupDFUSe.vi" Type="VI" URL="../Utilities/Uploader32/SetupDFUSe.vi"/>
+			</Item>
 			<Item Name="ConvertCmd2TlmArguments.vi" Type="VI" URL="../Utilities/ConvertCmd2TlmArguments.vi"/>
 			<Item Name="ConvertDD2DMS.vi" Type="VI" URL="../Utilities/ConvertDD2DMS.vi"/>
 			<Item Name="ConvertDMS2DD.vi" Type="VI" URL="../Utilities/ConvertDMS2DD.vi"/>
@@ -385,16 +390,13 @@
 			<Item Name="ImaqDirectShowDll.dll" Type="Document" URL="ImaqDirectShowDll.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="InitState.vi" Type="VI" URL="../Support/State/InitState.vi"/>
 			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="lvanlys.dll" Type="Document" URL="/C/Program Files/National Instruments/LabVIEW 2010/resource/lvanlys.dll"/>
-			<Item Name="NextState.vi" Type="VI" URL="../Support/State/NextState.vi"/>
 			<Item Name="nivissvc.dll" Type="Document" URL="nivissvc.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="ReadState.vi" Type="VI" URL="../Support/State/ReadState.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="Application" Type="EXE">
