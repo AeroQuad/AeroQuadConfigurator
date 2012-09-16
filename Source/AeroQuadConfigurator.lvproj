@@ -36,9 +36,6 @@
 					<Item Name="FlightStatus.vi" Type="VI" URL="../Support/SubPanel/FlightStatus/FlightStatus.vi"/>
 					<Item Name="TxDial.png" Type="Document" URL="../Support/SubPanel/FlightStatus/TxDial.png"/>
 				</Item>
-				<Item Name="GCS" Type="Folder">
-					<Item Name="GCSPrototype.vi" Type="VI" URL="../Support/SubPanel/GCS/GCSPrototype.vi"/>
-				</Item>
 				<Item Name="Initialize" Type="Folder">
 					<Item Name="AccelModel.stl" Type="Document" URL="../Support/SubPanel/Initialize/AccelModel.stl"/>
 					<Item Name="Initialize.vi" Type="VI" URL="../Support/SubPanel/Initialize/Initialize.vi"/>
@@ -196,8 +193,10 @@
 				<Item Name="VerifyUploadDialog.vi" Type="VI" URL="../Utilities/Uploader/VerifyUploadDialog.vi"/>
 			</Item>
 			<Item Name="Uploader32" Type="Folder">
+				<Item Name="AeroQuad32.mht" Type="Document" URL="../Utilities/Uploader32/AeroQuad32.mht"/>
 				<Item Name="AeroQuadUploader32.vi" Type="VI" URL="../Utilities/Uploader32/AeroQuadUploader32.vi"/>
 				<Item Name="DeFUSeUploader.vi" Type="VI" URL="../Utilities/Uploader32/DeFUSeUploader.vi"/>
+				<Item Name="dfu-util.exe" Type="Document" URL="../Utilities/Uploader32/dfu-util.exe"/>
 				<Item Name="SetupDFUSe.vi" Type="VI" URL="../Utilities/Uploader32/SetupDFUSe.vi"/>
 			</Item>
 			<Item Name="ConvertCmd2TlmArguments.vi" Type="VI" URL="../Utilities/ConvertCmd2TlmArguments.vi"/>
@@ -417,12 +416,15 @@
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/Application/Support</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/Icon/AeroQuadMacIcon.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{F2E7654F-1E88-40A1-9F7B-37DFD3D057B4}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{7DAAC8DB-7689-415C-8A93-56BF833C6EAD}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/AeroQuadConfigurator.vi</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="Source[10].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[10].itemID" Type="Ref">/My Computer/Utilities/Uploader32/dfu-util.exe</Property>
+				<Property Name="Source[10].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[2].itemID" Type="Ref">/My Computer/AeroQuadConfigurator.ini</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
@@ -444,13 +446,16 @@
 				<Property Name="Source[7].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[8].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[8].itemID" Type="Ref">/My Computer/Utilities/RScode/msvcr100.dll</Property>
-				<Property Name="SourceCount" Type="Int">9</Property>
+				<Property Name="Source[9].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Utilities/Uploader32/AeroQuad32.mht</Property>
+				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="SourceCount" Type="Int">11</Property>
 				<Property Name="TgtF_companyName" Type="Str">Carancho Engineering</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">Configuration tool for the AeroQuad MultiCopter</Property>
-				<Property Name="TgtF_fileVersion.build" Type="Int">8</Property>
 				<Property Name="TgtF_fileVersion.major" Type="Int">3</Property>
+				<Property Name="TgtF_fileVersion.minor" Type="Int">1</Property>
 				<Property Name="TgtF_internalName" Type="Str">AeroQuad Configurator</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">Copyright 2011 Carancho Engineering</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright 2012 Carancho Engineering</Property>
 				<Property Name="TgtF_productName" Type="Str">AeroQuad Configurator</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{284B0725-5483-41EE-ACFC-CE779783AA8D}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">AeroQuadConfigurator.exe</Property>
@@ -534,9 +539,9 @@
 				<Property Name="INST_defaultDir" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
 				<Property Name="INST_includeError" Type="Bool">false</Property>
 				<Property Name="INST_productName" Type="Str">AeroQuad Configurator</Property>
-				<Property Name="INST_productVersion" Type="Str">3.0.46</Property>
+				<Property Name="INST_productVersion" Type="Str">3.0.48</Property>
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
-				<Property Name="InstSpecVersion" Type="Str">10018002</Property>
+				<Property Name="InstSpecVersion" Type="Str">10018004</Property>
 				<Property Name="MSI_arpCompany" Type="Str">Carancho Engineering LLC</Property>
 				<Property Name="MSI_arpURL" Type="Str">www.AeroQuad.com</Property>
 				<Property Name="MSI_distID" Type="Str">{A07D00A7-DFF4-40CF-B7E4-EB348A35D9B7}</Property>
@@ -634,7 +639,7 @@
 				<Property Name="INST_productName" Type="Str">AeroQuad Configurator</Property>
 				<Property Name="INST_productVersion" Type="Str">3.0.63</Property>
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
-				<Property Name="InstSpecVersion" Type="Str">10018002</Property>
+				<Property Name="InstSpecVersion" Type="Str">10018004</Property>
 				<Property Name="MSI_arpCompany" Type="Str">Carancho Engineering LLC</Property>
 				<Property Name="MSI_arpURL" Type="Str">www.AeroQuad.com</Property>
 				<Property Name="MSI_distID" Type="Str">{1FC2427F-269D-4D3E-B167-9B9C426D06D6}</Property>
