@@ -1,6 +1,10 @@
-AeroQuad Configurator 3.0
+AeroQuad Configurator 3.2
 ========================================
 [http://www.AeroQuad.com](http://www.AeroQuad.com)
+
+Version 3.2 Release Notes (1/27/2013)
+----------------------------------------
+* Unified release with Flight Software to support AQ32 flight board
 
 Version 3.0.2 Release Notes (2/18/2012)
 ----------------------------------------
