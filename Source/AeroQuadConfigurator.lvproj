@@ -379,7 +379,7 @@
 			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="lvanlys.dll" Type="Document" URL="/C/Program Files/National Instruments/LabVIEW 2010/resource/lvanlys.dll"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="/C/Program Files (x86)/National Instruments/LabVIEW 2010/resource/lvanlys.dll"/>
 			<Item Name="ni_httpClient.dll" Type="Document" URL="ni_httpClient.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -403,7 +403,7 @@
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/Application/Support</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/Icon/AeroQuadMacIcon.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{A4AB88A3-4DC1-499E-B227-4C94E8A58E56}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{B7560C80-BD68-44DD-A0FF-8AC6DC7F88E6}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/AeroQuadConfigurator.vi</Property>
@@ -529,14 +529,14 @@
 				<Property Name="INST_defaultDir" Type="Str">{F9E9AD88-ABBF-40CE-BAD3-070BDAD57864}</Property>
 				<Property Name="INST_includeError" Type="Bool">false</Property>
 				<Property Name="INST_productName" Type="Str">AeroQuad Configurator</Property>
-				<Property Name="INST_productVersion" Type="Str">3.0.56</Property>
+				<Property Name="INST_productVersion" Type="Str">3.2.1</Property>
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
 				<Property Name="InstSpecVersion" Type="Str">10018004</Property>
 				<Property Name="MSI_arpCompany" Type="Str">Carancho Engineering LLC</Property>
 				<Property Name="MSI_arpURL" Type="Str">www.AeroQuad.com</Property>
 				<Property Name="MSI_distID" Type="Str">{A07D00A7-DFF4-40CF-B7E4-EB348A35D9B7}</Property>
 				<Property Name="MSI_osCheck" Type="Int">0</Property>
-				<Property Name="MSI_upgradeCode" Type="Str">{5439E616-1F3C-4A3F-A6B0-B5C265377EA0}</Property>
+				<Property Name="MSI_upgradeCode" Type="Str">{1FC9FDAE-19B9-4AA8-8AC6-FD9C563D7A1E}</Property>
 				<Property Name="MSI_windowMessage" Type="Str">Thanks for installing the AeroQuad Configurator!  This tool is used to setup and configure your AeroQuad quadcopter in prepartion of flight.  If you require any technical support, please visit our forums at www.AeroQuad.com.</Property>
 				<Property Name="MSI_windowTitle" Type="Str">AeroQuad Configurator Installer</Property>
 				<Property Name="RegDest[0].dirName" Type="Str">Software</Property>
